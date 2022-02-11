@@ -4,6 +4,10 @@ import styled from "@emotion/styled";
 export const globalStyles = (
     <Global
         styles={css`
+            * {
+                box-sizing: border-box;
+            }
+
             html,
             body {
                 display: flex;
