@@ -8,6 +8,7 @@ export default function Document() {
                 <meta name="description" content="Kurt Interactive is a narrative and interactive experience where you play as Kurt, a 6 year old child who wants to create." />
 
                 <link rel="shortcut icon" href="/favicon.ico" />
+                <link rel="stylesheet" href="https://use.typekit.net/axx7xmq.css" />
             </Head>
             <body>
                 <Main />
