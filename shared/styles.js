@@ -4,6 +4,14 @@ import styled from "@emotion/styled";
 export const globalStyles = (
     <Global
         styles={css`
+            @font-face {
+                font-family: "HeartVibes";
+                src: url("/HeartVibes-Handwriting.woff");
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+            }
+
             * {
                 box-sizing: border-box;
             }
@@ -27,5 +35,5 @@ export const Container = styled.div`
     width: 100vw;
     max-width: 420px;
     overflow: hidden;
-    background: right / cover no-repeat url('/paper_texture_background.png'), #FEFEF2;
+    background: right / cover no-repeat url("/paper_texture_background.png"), #fefef2;
 `;
