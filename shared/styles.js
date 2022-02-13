@@ -22,10 +22,10 @@ export const globalStyles = (
     />
 );
 
-export const Container = styled.div({
-    height: "100vh",
-    width: "100vw",
-    maxWidth: "420px",
-    overflow: "hidden",
-    backgroundColor: "#FEFEF2",
-});
+export const Container = styled.div`
+    height: 100vh;
+    width: 100vw;
+    max-width: 420px;
+    overflow: hidden;
+    background: right / cover no-repeat url('/paper_texture_background.png'), #FEFEF2;
+`;
