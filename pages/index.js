@@ -1,13 +1,13 @@
-import styled from "@emotion/styled";
-import { Container } from "../shared/styles";
+import styled from "@emotion/styled"
+import { Container } from "../shared/styles"
 
-import Button from "../components/Button";
-import Bike from "../drawings/Bike";
-import Bird from "../drawings/Bird";
-import Cloud from "../drawings/Cloud";
-import House from "../drawings/House";
-import Sun from "../drawings/Sun";
-import Flower from "../drawings/Flower";
+import Button from "../components/Button"
+import Bike from "../drawings/Bike"
+import Bird from "../drawings/Bird"
+import Cloud from "../drawings/Cloud"
+import House from "../drawings/House"
+import Sun from "../drawings/Sun"
+import Flower from "../drawings/Flower"
 
 const Home = () => (
     <Container>
@@ -28,16 +28,16 @@ const Home = () => (
                 <Button layout="secondary">Crédits</Button>
             </Item>
         </Grid>
-        <Sun top="5" right="10" />
-        <Cloud top="15" left="10" />
-        <Bird top="35" right="10" />
-        <Bike bottom="35" right="10" />
-        <House bottom="30" left="10" />
-        <Flower bottom="3" left="10" />
+        <Sun top="5" right="10"/>
+        <Cloud top="15" left="10"/>
+        <Bird top="35" right="10"/>
+        <Bike bottom="35" right="10"/>
+        <House bottom="30" left="10"/>
+        <Flower bottom="3" left="10"/>
     </Container>
-);
+)
 
-export default Home;
+export default Home
 
 /* const Header = styled.header({
     display: "flex",
@@ -58,7 +58,7 @@ const Grid = styled.div`
         "."
         "title"
         "button";
-`;
+`
 
 const Item = styled.div`
     grid-area: ${(props) => props.name};
@@ -67,10 +67,10 @@ const Item = styled.div`
     justify-content: center;
     align-items: center;
     gap: 1rem;
-`;
+`
 
 const Title = styled.h1`
     grid-area: title;
     font-family: "HeartVibes";
     font-size: 4.5rem;
-`;
+`
