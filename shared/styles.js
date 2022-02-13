@@ -8,7 +8,7 @@ export const globalStyles = (
                 font-family: "HeartVibes";
                 src: url("/HeartVibes-Handwriting.woff");
                 font-style: normal;
-                font-weight: 400;
+                font-weight: 800;
                 font-display: swap;
             }
 
@@ -31,6 +31,7 @@ export const globalStyles = (
 );
 
 export const Container = styled.div`
+    position: relative;
     height: 100vh;
     width: 100vw;
     max-width: 420px;
