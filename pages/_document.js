@@ -10,7 +10,7 @@ export default function Document() {
                 />
 
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://metatags.io/" />
+                <meta property="og:url" content="kurt-interactive.vercel.app/" />
                 <meta property="og:title" content="Kurt" />
                 <meta
                     property="og:description"
@@ -18,11 +18,11 @@ export default function Document() {
                 />
                 <meta
                     property="og:image"
-                    content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+                    content="https://res.cloudinary.com/hf10ee93o/image/upload/v1644720660/Meta_image_evc8hd.jpg"
                 />
 
                 <meta property="twitter:card" content="summary_large_image" />
-                <meta property="twitter:url" content="https://metatags.io/" />
+                <meta property="twitter:url" content="kurt-interactive.vercel.app/" />
                 <meta property="twitter:title" content="Kurt" />
                 <meta
                     property="twitter:description"
@@ -30,7 +30,7 @@ export default function Document() {
                 />
                 <meta
                     property="twitter:image"
-                    content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+                    content="https://res.cloudinary.com/hf10ee93o/image/upload/v1644720660/Meta_image_evc8hd.jpg"
                 />
 
                 <link rel="shortcut icon" href="/favicon.ico" />
