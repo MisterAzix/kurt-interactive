@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useRef } from "react"
 
 import { Container } from "../shared/styles"
 import { Player } from "@lottiefiles/react-lottie-player"
@@ -7,17 +7,27 @@ import transition from "../lotties/transition.json"
 import styled from "@emotion/styled"
 
 export default function Transition () {
+    const player = useRef()
+
     return (<Container>
             <h1>Transition</h1>
+            <button onClick={() => {
+                player.current.play()
+            }}>Play
+            </button>
             <PlayerContainer>
                 <Player
                     src={transition}
+                    ref={player}
                     style={{
                         width: "100%",
-                        height: "100%"
+                        height: "100vh"
                     }}
-                    autoplay
-                    loop
+                    onEvent={(event) => {
+                        (event === "load") && player.current.container.querySelector("svg").setAttribute("preserveAspectRatio", "none")
+                    }}
+                    keepLastFrame
+                    speed={0.75}
                 />
             </PlayerContainer>
         </Container>
@@ -28,10 +38,6 @@ const PlayerContainer = styled.div`
    position: absolute;
    top: 0;
    left: 0;
-   width: 100vw;
-   height: 100vh;
-   svg {
-       width: 100%;
-       height: 100%;
-   }
+   pointer-events: none;
+   
 `
