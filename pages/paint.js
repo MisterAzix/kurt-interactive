@@ -4,6 +4,7 @@ import styled from "@emotion/styled"
 import PostIt from "../components/PostIt"
 import Button from "../components/Button"
 import Header from "../components/Header"
+import PaintItem from "../components/paint/PaintItem"
 
 export default function Paint () {
     return (
@@ -17,6 +18,7 @@ export default function Paint () {
                 </Item>
                 <PaintImgContainer>
                     <PaintImg src={vue_de_bordeaux_prise_de_floirac.src}/>
+                    <PaintItem/>
                 </PaintImgContainer>
                 <Interaction name="button">
                     <Button>
@@ -45,6 +47,13 @@ export default function Paint () {
     )
 }
 
+const PaintImgContainer = styled.div`
+    overflow-y: scroll;
+    grid-area: postit/1/paint/1; 
+    margin-top: 2rem;
+    position: relative;
+`
+
 const PaintImg = styled.img`
     width: auto;
     min-width: 100%;
@@ -62,12 +71,6 @@ const Item = styled.div`
     span {
         font-weight: 500;
     }
-`
-
-const PaintImgContainer = styled.div`
-    overflow: scroll;
-    grid-area: postit/1/paint/1; 
-    margin-top: 2rem;
 `
 
 const Interaction = styled.div`
