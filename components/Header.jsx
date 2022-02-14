@@ -7,7 +7,7 @@ export default function Header()
 
 const HeaderElement = styled.header`
     font-family: "HeartVibes";
-    text-align: center;   
+    text-align: center;
     font-size: 1.5rem;
-    margin: 2rem 0; 
+    margin-top: 2rem ; 
 `
