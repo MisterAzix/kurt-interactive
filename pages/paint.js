@@ -18,19 +18,6 @@ export default function Paint () {
                 <Item name="postit/1/paint/1">
                     <PaintImg src={vue_de_bordeaux_prise_de_floirac.src}/>
                 </Item>
-                <Item name="paintItems">
-                    <span>Mes éléments</span>
-                    <PaintItemsContainer>
-                        <PaintItem></PaintItem>
-                        <PaintItem></PaintItem>
-                        <PaintItem></PaintItem>
-                        <PaintItem></PaintItem>
-                        <PaintItem></PaintItem>
-                        <PaintItem></PaintItem>
-                        <PaintItem></PaintItem>
-                        <PaintItem></PaintItem>
-                    </PaintItemsContainer>
-                </Item>
                 <Interaction name="button">
                     <Button>
                         J'ai terminé
@@ -86,30 +73,12 @@ const Interaction = styled.div`
     margin: 2rem 0;
     `
 
-const PaintItemsContainer = styled.div`
-    border: 2px solid black;
-    border-radius: 4px;
-    display: flex;
-    padding: 1rem;
-    gap: 1.5rem;
-    max-width: 20rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row-reverse;
-`
-const PaintItem = styled.div`
-    width: 2rem;
-    height: 2rem;
-    border: 1px black solid;
-`
-
 const Grid = styled.div`
     display: grid;
-    grid-template-rows: min-content min-content 1fr min-content min-content;
+    grid-template-rows: min-content min-content 1fr min-content;
     grid-template-areas : "header"
                           "postit"
                           "paint"
-                          "paintItems"
                           "button";
     grid-gap: 1rem;
     height: 100%;
