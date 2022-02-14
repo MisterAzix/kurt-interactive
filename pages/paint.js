@@ -1,4 +1,5 @@
 import { Container } from "../shared/styles"
+import { useState } from "react"
 import vue_de_bordeaux_prise_de_floirac from "../public/paints/vue_de_bordeaux_prise_de_floirac.jpg"
 import styled from "@emotion/styled"
 import PostIt from "../components/PostIt"
@@ -7,6 +8,8 @@ import Header from "../components/Header"
 import PaintItem from "../components/paint/PaintItem"
 
 export default function Paint () {
+    const [pickedItems, setPickedItems] = useState([])
+
     return (
         <Container>
             <Grid>
@@ -18,7 +21,10 @@ export default function Paint () {
                 </Item>
                 <PaintImgContainer>
                     <PaintImg src={vue_de_bordeaux_prise_de_floirac.src}/>
-                    <PaintItem/>
+                    <PaintItem width="60px" height="100px" bottom="7%" right="-13%" onClick={(e) => {
+                        setPickedItems([...pickedItems, e.target])
+                        console.log(pickedItems)
+                    }}/>
                 </PaintImgContainer>
                 <Interaction name="button">
                     <Button>

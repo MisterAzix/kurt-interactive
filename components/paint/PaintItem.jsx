@@ -1,10 +1,8 @@
 import styled from "@emotion/styled"
 
-export default function PaintItem (){
+export default function PaintItem (props) {
 
-    return (
-        <PaintItemElement width="60px" height="100px" bottom="7%" right="-13%"  />
-    )
+    return <PaintItemElement width={props.width} height={props.height} bottom={props.bottom} right={props.right} onClick={props.onClick} />
 }
 
 const PaintItemElement = styled.div`
