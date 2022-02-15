@@ -124,9 +124,9 @@ const Interaction = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    grid-are: button;
+    grid-area: button;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: 2rem 0;
 `
 
@@ -146,11 +146,18 @@ const BagContainer = styled.div`
     flex-direction: column;
     align-items: center;
     position: relative;
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+    
+    span {
+        font-size: 0.875rem
+    }
     
     b {
-        position:absolute;
+        position: absolute;
         top: 0;
-        Left: 0;
+        left: 20px;
     }
     
 `
@@ -158,5 +165,4 @@ const BagContainer = styled.div`
 const BagSVG = styled.svg`
     width: 42px;
     height: 53px;
-    cursor: pointer;
 `
