@@ -3,7 +3,7 @@ import React from "react";
 
 export default function PostIt(props) {
     return (
-        <PostItContainer>
+        <PostItContainer rotation={props.rotation}>
             <div>
                 <p>{props.children}</p>
                 <svg fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,12 +19,12 @@ export default function PostIt(props) {
 
 const PostItContainer = styled.div`
     width: fit-content;
-    transform: rotate(5deg);
+    transform: ${(props) => `rotate(${props.rotation || 5}deg)`};
 
     div {
         position: relative;
         width: fit-content;
-        padding: 1.5rem;
+        padding: 1rem 1.5rem;
         background-color: #fbdf7d;
         filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.25));
 
@@ -36,7 +36,7 @@ const PostItContainer = styled.div`
 
         svg {
             position: absolute;
-            left: .43rem;
+            left: 0.43rem;
             width: 100%;
             top: calc(100% - 0.5rem);
         }

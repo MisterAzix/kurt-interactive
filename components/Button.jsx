@@ -3,7 +3,11 @@ import styled from "@emotion/styled";
 import React from "react";
 
 export default function Button(props) {
-    return <Btn layout={props.layout} arrow={props.arrow}>{props.children}</Btn>;
+    return (
+        <Btn id={props.id} onClick={props.onClick} layout={props.layout} arrow={props.arrow}>
+            {props.children}
+        </Btn>
+    );
 }
 
 const btnBaseStyle = css`
