@@ -1,8 +1,8 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import React from "react";
+import { css } from "@emotion/react"
+import styled from "@emotion/styled"
+import React from "react"
 
-export default function Bike(props) {
+export default function Bike (props) {
     return (
         <Svg {...props} width="54" height="47" viewBox="0 0 54 47" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -10,30 +10,30 @@ export default function Bike(props) {
                 fill="black"
             />
         </Svg>
-    );
+    )
 }
 
 const Svg = styled.svg`
     position: absolute;
 
     ${(props) =>
-        props.top &&
-        css`
+    props.top &&
+    css`
             top: ${props.top}%;
         `}
     ${(props) =>
-        props.bottom &&
-        css`
+    props.bottom &&
+    css`
             bottom: ${props.bottom}%;
         `}
     ${(props) =>
-        props.left &&
-        css`
+    props.left &&
+    css`
             left: ${props.left}%;
         `}
     ${(props) =>
-        props.right &&
-        css`
+    props.right &&
+    css`
             right: ${props.right}%;
         `}
-`;
+`
