@@ -19,13 +19,15 @@ export default function Paint () {
                 <Item name="postit">
                     <PostIt>Clique sur les éléments du tableau pour les mettre dans ton inventaire.</PostIt>
                 </Item>
-                <PaintImgContainer>
-                    <PaintImg src={vue_de_bordeaux_prise_de_floirac.src}/>
-                    <PaintItem width="60px" height="100px" bottom="7%" right="-13%" onClick={(e) => {
-                        setPickedItems([...pickedItems, e.target])
-                        console.log(pickedItems)
-                    }}/>
-                </PaintImgContainer>
+                <PaintImgArea>
+                    <PaintImgContainer>
+                        <PaintImg src={vue_de_bordeaux_prise_de_floirac.src}/>
+                        <PaintItem width="9%" height="19%" bottom="6%" left="49%" onClick={(e) => {
+                            setPickedItems([...pickedItems, e.target])
+                            console.log(pickedItems)
+                        }}/>
+                    </PaintImgContainer>
+                </PaintImgArea>
                 <Interaction name="button">
                     <Button>
                         J'ai terminé
@@ -53,16 +55,20 @@ export default function Paint () {
     )
 }
 
-const PaintImgContainer = styled.div`
-    overflow-y: scroll;
-    grid-area: postit/1/paint/1; 
+const PaintImgArea = styled.div`
+    grid-area: postit/1/paint/1;
+    min-width: 100%;
     margin-top: 2rem;
+    overflow-y: scroll;
+`
+
+const PaintImgContainer = styled.div`
     position: relative;
+    height: 100%;
+    width: min-content;
 `
 
 const PaintImg = styled.img`
-    width: auto;
-    min-width: 100%;
     object-fit: cover;
     height: 100%;
 `
