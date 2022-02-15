@@ -26,7 +26,7 @@ const PostItContainer = styled.div`
     div {
         position: relative;
         width: fit-content;
-        padding: 1rem 1.5rem;
+        padding: 0.5rem 1.5rem;
         background-color: #fbdf7d;
         filter: drop-shadow(3px 3px 0px rgba(0, 0, 0, 0.25));
 
@@ -34,6 +34,7 @@ const PostItContainer = styled.div`
             font-size: 1.1rem;
             font-weight: 500;
             max-width: 276px;
+            text-align: left;
         }
 
         svg {
