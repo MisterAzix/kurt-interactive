@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import PostIt from "../components/PostIt";
 import Button from "../components/Button";
 import { css } from "@emotion/react";
+import Dialog from "../components/Dialog";
 
 const Introduction = () => {
     const [slide, setSlide] = useState(0);
@@ -16,13 +17,98 @@ const Introduction = () => {
 
     switch (slide) {
         case 1:
-            return <Container></Container>;
+            return (
+                <Container>
+                    <Grid slide="1">
+                        <Item name="header">
+                            <Header />
+                        </Item>
+                        <Item name="illustration">
+                            <Illustration width={90} src="/illustrations/painting.png" alt="" />
+                        </Item>
+                        <Item name="dialog">
+                            <Dialog name="KURT :">Maman, comment devenir un grand artiste ?</Dialog>
+                        </Item>
+                        <Item name="button">
+                            <Button arrow="right" onClick={handleNext}>
+                                Continuer
+                            </Button>
+                        </Item>
+                    </Grid>
+                </Container>
+            );
         case 2:
-            return <Container></Container>;
+            return (
+                <Container>
+                    <Grid slide="1">
+                        <Item name="header">
+                            <Header />
+                        </Item>
+                        <Item name="illustration">
+                            <Illustration width={50} src="/illustrations/mother.png" alt="" />
+                        </Item>
+                        <Item name="dialog">
+                            <Dialog name="MÈRE DE KURT :">
+                                Tu sais Kurt, pour être un artiste, il faut être une grande personne et avoir beaucoup
+                                de connaissances.
+                            </Dialog>
+                        </Item>
+                        <Item name="button">
+                            <Button arrow="right" onClick={handleNext}>
+                                Continuer
+                            </Button>
+                        </Item>
+                    </Grid>
+                </Container>
+            );
         case 3:
-            return <Container></Container>;
+            return (
+                <Container>
+                    <Grid slide="2">
+                        <Item name="header">
+                            <Header />
+                        </Item>
+                        <Item name="illustration">
+                            <Illustration width={90} src="/illustrations/hands.png" alt="" />
+                        </Item>
+                        <Item name="postit">
+                            <PostIt rotation={-5}>
+                                Tu n’es pas d’accord ! Toi aussi tu veux être un artiste !
+                                <br />
+                                <br />
+                                Tu te munis de ton carnet et pars à la découverte du musée.
+                            </PostIt>
+                        </Item>
+                        <Item name="button">
+                            <Button arrow="right" onClick={handleNext}>
+                                Continuer
+                            </Button>
+                        </Item>
+                    </Grid>
+                </Container>
+            );
         case 4:
-            return <Container></Container>;
+            return (
+                <Container>
+                    <Grid slide="2">
+                        <Item name="header">
+                            <Header />
+                        </Item>
+                        <Item name="illustration">
+                            <Illustration width={90} src="/illustrations/museum_interior.png" alt="" />
+                        </Item>
+                        <Item name="postit">
+                            <PostIt>
+                                Ton objectif est de te déplacer dans le musée des Beaux Arts pour récupérer des éléments
+                                des oeuvres d’art.
+                            </PostIt>
+                        </Item>
+                        <Item name="button">
+                            <Button arrow="right" /* onClick={handleNext} */>C'est parti !</Button>
+                        </Item>
+                    </Grid>
+                </Container>
+            );
         default:
             return (
                 <Container>
@@ -62,28 +148,29 @@ const Grid = styled.div`
         switch (props.slide) {
             case "1":
                 return css`
-                    grid-template-rows: min-content 10vh 1fr 20vh;
+                    grid-template-rows: min-content 1fr min-content 20vh;
                     grid-template-areas:
                         "header"
-                        "postit"
-                        "board"
+                        "illustration"
+                        "dialog"
                         "button";
                 `;
             case "2":
                 return css`
-                    grid-template-rows: min-content 10vh 1fr 20vh;
+                    grid-template-rows: min-content 1fr 1fr 20vh;
                     grid-template-areas:
                         "header"
+                        "illustration"
                         "postit"
-                        "board"
                         "button";
                 `;
             default:
                 return css`
-                    grid-template-rows: min-content 1fr 20vh;
+                    grid-template-rows: min-content 1fr 10vh 20vh;
                     grid-template-areas:
                         "header"
                         "illustration"
+                        "."
                         "button";
                 `;
         }
@@ -101,10 +188,10 @@ const Item = styled.div`
 `;
 
 const Illustration = styled.img`
-    width: 100%;
+    width: ${(props) => props.width || 90}%;
 `;
 
 const PostItContainer = styled.div`
     position: absolute;
-    top: 75%;
+    top: 80%;
 `;
