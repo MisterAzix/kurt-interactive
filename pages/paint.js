@@ -8,7 +8,23 @@ import Header from "../components/Header"
 import PaintItem from "../components/paint/PaintItem"
 
 export default function Paint () {
-    const [pickedItems, setPickedItems] = useState([])
+    const [paintItem, setPaintItem] = useState([
+        {
+            name: "donkey",
+            width: "9%",
+            height: "19%",
+            bottom: "6%",
+            left: "49%"
+        },
+        {
+            name: "tree",
+            width: "34%",
+            height: "54%",
+            top: "7%",
+            left: "69%"
+        }
+    ])
+    const [inventory, setInventory] = useState([])
 
     return (
         <Container>
@@ -22,10 +38,12 @@ export default function Paint () {
                 <PaintImgArea>
                     <PaintImgContainer>
                         <PaintImg src={vue_de_bordeaux_prise_de_floirac.src}/>
-                        <PaintItem width="9%" height="19%" bottom="6%" left="49%" onClick={(e) => {
-                            setPickedItems([...pickedItems, e.target])
-                            console.log(pickedItems)
-                        }}/>
+                        {
+                            paintItem.map(item => {
+                                return <PaintItem key={item.name} width={item.width} height={item.height}
+                                                  left={item.left} top={item.top} bottom={item.bottom}/>
+                            })
+                        }
                     </PaintImgContainer>
                 </PaintImgArea>
                 <Interaction name="button">
@@ -66,6 +84,7 @@ const PaintImgContainer = styled.div`
     position: relative;
     height: 100%;
     width: min-content;
+    overflow: hidden;
 `
 
 const PaintImg = styled.img`

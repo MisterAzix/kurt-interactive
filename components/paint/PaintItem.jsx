@@ -2,7 +2,7 @@ import styled from "@emotion/styled"
 
 export default function PaintItem (props) {
 
-    return <PaintItemElement width={props.width} height={props.height} bottom={props.bottom} left={props.left} onClick={props.onClick} />
+    return <PaintItemElement width={props.width} height={props.height} top={props.top} bottom={props.bottom} left={props.left} onClick={props.onClick} />
 }
 
 const PaintItemElement = styled.div`
