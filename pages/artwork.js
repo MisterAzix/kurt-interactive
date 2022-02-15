@@ -7,13 +7,15 @@ import html2canvas from "html2canvas";
 import axios from "axios";
 import Link from "next/link";
 
+import { useInventoryContext } from "../lib/context";
+
 import Header from "../components/Header";
 import PostIt from "../components/PostIt";
 import Button from "../components/Button";
 
 const Artwork = () => {
     const [artworkState, setArtworkState] = useState(0);
-    const [inventory, setInventory] = useState([0, 1, 2, 3, 4, 5, 6]);
+    const { inventory, setInventory } = useInventoryContext([]);
     const [board, setBoard] = useState([]);
     const containerRef = useRef();
     const containerFinalRef = useRef();

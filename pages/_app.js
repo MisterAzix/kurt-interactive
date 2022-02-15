@@ -1,5 +1,7 @@
-import Head from "next/head";
 import { globalStyles } from "../shared/styles";
+import Head from "next/head";
+
+import InventoryWrapper from "../lib/context";
 
 const App = ({ Component, pageProps }) => (
     <>
@@ -7,7 +9,9 @@ const App = ({ Component, pageProps }) => (
             <title>Kurt</title>
         </Head>
         {globalStyles}
-        <Component {...pageProps} />
+        <InventoryWrapper>
+            <Component {...pageProps} />
+        </InventoryWrapper>
     </>
 );
 
