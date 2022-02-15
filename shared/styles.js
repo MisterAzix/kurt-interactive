@@ -1,5 +1,5 @@
-import { css, Global, keyframes } from "@emotion/react";
-import styled from "@emotion/styled";
+import { css, Global } from "@emotion/react"
+import styled from "@emotion/styled"
 
 export const globalStyles = (
     <Global
@@ -28,7 +28,7 @@ export const globalStyles = (
             }
         `}
     />
-);
+)
 
 export const Container = styled.div`
     position: relative;
@@ -37,4 +37,4 @@ export const Container = styled.div`
     max-width: 420px;
     overflow: hidden;
     background: right / cover no-repeat url("/paper_texture_background.png"), #fefef2;
-`;
+`

@@ -20,6 +20,8 @@ export default function PostIt(props) {
 const PostItContainer = styled.div`
     width: fit-content;
     transform: ${(props) => `rotate(${props.rotation || 5}deg)`};
+    z-index: 1;
+    pointer-events: none;
 
     div {
         position: relative;
