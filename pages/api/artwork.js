@@ -28,16 +28,14 @@ const handler = nc({
 handler.post(upload.single('artworkImage'), async (req, res) => {
     try {
         let artworkImage;
-        console.log(req.file);
-        if (req.file) {
-            const image = await cloudinary.uploader.upload(req.file.path, {
+        if (req.body.image_url) {
+            const image = await cloudinary.uploader.upload(req.body.image_url, {
                 folder: 'kurt_interactive',
-                /* width: 512,
-                height: 512,
-                crop: "fill", */
+                width: 472,
+                height: 278,
+                crop: "fill",
             });
             artworkImage = image.secure_url;
-            console.log(artworkImage);
         }
 
         let db = await connectToDatabase();
@@ -57,11 +55,5 @@ handler.post(upload.single('artworkImage'), async (req, res) => {
         });
     }
 });
-
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-};
 
 export default handler;
