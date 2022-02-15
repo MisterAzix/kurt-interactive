@@ -9,25 +9,35 @@ import PaintItem from "../components/paint/PaintItem"
 export default function Paint () {
     const [paintItem, setPaintItem] = useState([
         {
-            name: "tree",
+            src: "tree",
             width: "34%",
             height: "54%",
             top: "7%",
-            left: "69%"
+            left: "69%",
+            opacity: "0.4"
         },
         {
-            name: "donkey",
+            src: "donkey",
             width: "9%",
             height: "19%",
             bottom: "6%",
-            left: "49%"
+            left: "49%",
+            opacity: "0.7"
         },
+        {
+            src: "bridge",
+            width: "30%",
+            height: "10%",
+            bottom: "31%",
+            left: "51%",
+            opacity: "0.6"
+        }
     ])
     const [inventory, setInventory] = useState([])
 
     function PickItem (item) {
-        setPaintItem(paintItem.filter(paint => paint.name !== item.name))
-        setInventory([...inventory, item.name])
+        setPaintItem(paintItem.filter(paint => paint.src !== item.src))
+        setInventory([...inventory, item.src])
     }
 
     return (
@@ -44,9 +54,9 @@ export default function Paint () {
                         <PaintImg src="/paints/vue_de_bordeaux_prise_de_floirac.jpg"/>
                         {
                             paintItem.map(item => {
-                                return <PaintItem key={item.name} width={item.width} height={item.height}
+                                return <PaintItem key={item.src} width={item.width} height={item.height}
                                                   left={item.left} top={item.top} bottom={item.bottom}
-                                                  onClick={() => PickItem(item)}/>
+                                                  opacity={item.opacity} onClick={() => PickItem(item)}/>
                             })
                         }
                     </PaintImgContainer>
