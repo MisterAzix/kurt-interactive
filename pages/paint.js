@@ -93,7 +93,7 @@ const PaintImgArea = styled.div`
     grid-area: postit/1/paint/1;
     min-width: 100%;
     margin-top: 2rem;
-    overflow-y: scroll;
+    overflow-y: auto;
 `
 
 const PaintImgContainer = styled.div`
