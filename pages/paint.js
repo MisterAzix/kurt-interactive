@@ -7,6 +7,7 @@ import Header from "../components/Header"
 import PaintItem from "../components/paint/PaintItem"
 
 export default function Paint () {
+    const [isPressed, setIsPressed] = useState(false)
     const [paintItem, setPaintItem] = useState([
         {
             src: "tree",
@@ -40,6 +41,14 @@ export default function Paint () {
         setInventory([...inventory, item.src])
     }
 
+    function handleBagPress () {
+        setIsPressed(true)
+    }
+
+    function handleBagRelease () {
+        setIsPressed(false)
+    }
+
     return (
         <Container>
             <Grid>
@@ -61,11 +70,21 @@ export default function Paint () {
                         }
                     </PaintImgContainer>
                 </PaintImgArea>
+                {
+                    isPressed ? (
+                        <ItemsModal>
+                            {inventory.length ? inventory.map(item => {
+                                return <InventoryItem key={item}>{item}</InventoryItem>
+                            }) : "Aucun éléments dans l'inventaire"}
+                        </ItemsModal>
+                    ) : null
+                }
                 <Interaction name="button">
                     <Button>
                         J'ai terminé
                     </Button>
-                    <BagContainer>
+                    <BagContainer onMouseDown={handleBagPress} onMouseUp={handleBagRelease}
+                                  onTouchStart={handleBagPress} onTouchEnd={handleBagRelease}>
                         <b>{inventory.length}</b>
                         <BagSVG>
                             <path
@@ -94,6 +113,7 @@ const PaintImgArea = styled.div`
     min-width: 100%;
     margin-top: 2rem;
     overflow-y: auto;
+    position: relative;
 `
 
 const PaintImgContainer = styled.div`
@@ -159,7 +179,28 @@ const BagContainer = styled.div`
         top: 0;
         left: 20px;
     }
-    
+`
+
+const ItemsModal = styled.div`
+    position: absolute;
+    bottom: 15%;
+    display: flex;
+    width: 90%;
+    background-color: #fefef2;
+    border-radius: 4px;
+    padding: 1rem;
+    gap: 1rem;
+    margin: auto;
+    right: 0;
+    left: 0;
+    grid-area: paint;
+`
+
+const InventoryItem = styled.div`
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    background-color: #141516;
+    color: #fff;
 `
 
 const BagSVG = styled.svg`
