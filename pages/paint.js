@@ -9,19 +9,19 @@ import PaintItem from "../components/paint/PaintItem"
 export default function Paint () {
     const [paintItem, setPaintItem] = useState([
         {
+            name: "tree",
+            width: "34%",
+            height: "54%",
+            top: "7%",
+            left: "69%"
+        },
+        {
             name: "donkey",
             width: "9%",
             height: "19%",
             bottom: "6%",
             left: "49%"
         },
-        {
-            name: "tree",
-            width: "34%",
-            height: "54%",
-            top: "7%",
-            left: "69%"
-        }
     ])
     const [inventory, setInventory] = useState([])
 
@@ -47,7 +47,6 @@ export default function Paint () {
                                 return <PaintItem key={item.name} width={item.width} height={item.height}
                                                   left={item.left} top={item.top} bottom={item.bottom}
                                                   onClick={() => PickItem(item)}/>
-
                             })
                         }
                     </PaintImgContainer>

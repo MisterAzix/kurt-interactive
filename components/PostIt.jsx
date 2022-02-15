@@ -21,6 +21,7 @@ const PostItContainer = styled.div`
     width: fit-content;
     transform: rotate(5deg);
     z-index: 1;
+    pointer-events: none;
 
     div {
         position: relative;
