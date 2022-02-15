@@ -1,14 +1,14 @@
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
-import React from "react";
+import React, { forwardRef } from "react";
 
-export default function Button(props) {
-    return (
-        <Btn id={props.id} onClick={props.onClick} layout={props.layout} arrow={props.arrow}>
-            {props.children}
-        </Btn>
-    );
-}
+const Button = forwardRef((props, ref) => (
+    <Btn id={props.id} onClick={props.onClick} layout={props.layout} arrow={props.arrow}>
+        {props.children}
+    </Btn>
+));
+
+export default Button;
 
 const btnBaseStyle = css`
     border: none;
