@@ -9,6 +9,10 @@ import Cloud from "../drawings/Cloud";
 import House from "../drawings/House";
 import Sun from "../drawings/Sun";
 import Flower from "../drawings/Flower";
+import Zigzag from "../drawings/Zigzag";
+import Spring from "../drawings/Spring";
+import Circle from "../drawings/Circle";
+import Star from "../drawings/Star";
 
 const Home = () => (
     <Container>
@@ -28,7 +32,15 @@ const Home = () => (
         <Bird top="35" right="10" />
         <Bike bottom="35" right="10" />
         <House bottom="30" left="10" />
-        <Flower bottom="3" left="10" />
+        <Flower bottom="3" right="15" />
+        <Zigzag top="35" left="20" />
+        <Spring bottom="37" left="50" />
+        <Circle bottom="5" left="15" />
+        <Circle top="30" left="5" />
+        <Circle top="42" right="38" />
+        <Star top="48" left="20" />
+        <Star bottom="13" left="25" />
+        <Star bottom="25" right="15" />
     </Container>
 );
 
