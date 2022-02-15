@@ -1,19 +1,17 @@
+import styled from "@emotion/styled";
 import { connectToDatabase } from "../lib/mongodb";
 import { Container } from "../shared/styles";
 
 const Galery = ({ artworks }) => (
     <Container>
-        {/* <form action="/api/artwork" method="POST" encType="multipart/form-data">
-            <input type="file" name="artworkImage"></input>
-            <input type="submit"></input>
-        </form> */}
-        {artworks &&
-            JSON.parse(artworks).map((artwork, key) => (
-                <div key={key}>
-                    ${artwork._id}
-                    <img width="100px" src={artwork.image_link} alt="" />
-                </div>
-            ))}
+        <GaleryContainer>
+            {artworks &&
+                JSON.parse(artworks).map((artwork, key) => (
+                    <div key={key}>
+                        <img width="100px" src={artwork.image_link} alt="" />
+                    </div>
+                ))}
+        </GaleryContainer>
     </Container>
 );
 
@@ -25,3 +23,11 @@ export const getStaticProps = async () => {
 
     return { props: { artworks: JSON.stringify(artworks) } };
 };
+
+const GaleryContainer = styled.ul`
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+`;
