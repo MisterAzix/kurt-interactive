@@ -1,14 +1,14 @@
-import { Container } from "../shared/styles"
+import { Container } from "../../shared/styles"
 import { useState } from "react"
 import styled from "@emotion/styled"
 import { motion } from "framer-motion"
 
-import { useInventoryContext } from "../lib/context"
+import { useInventoryContext } from "../../lib/context"
 
-import PostIt from "../components/PostIt"
-import Button from "../components/Button"
-import Header from "../components/Header"
-import PaintItem from "../components/paint/PaintItem"
+import PostIt from "../PostIt"
+import Button from "../Button"
+import Header from "../Header"
+import PaintItem from "./PaintItem"
 import Link from "next/link"
 
 export default function Paint () {
@@ -36,7 +36,7 @@ export default function Paint () {
             height: "10%",
             bottom: "31%",
             left: "51%",
-            opacity: "0.6"
+            opacity: "0.7"
         }
     ])
     const { inventory, setInventory } = useInventoryContext([])
