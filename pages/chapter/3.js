@@ -82,28 +82,28 @@ const Chapter = () => {
             )
         case 2:
             const paintItem = [{
-                src: "tree",
-                width: "34%",
-                height: "54%",
-                top: "7%",
-                left: "69%",
-                opacity: "0.4"
+                src: "tiger",
+                width: "24%",
+                height: "68%",
+                top: "10%",
+                left: "70%",
+                opacity: "0.1"
             },
                 {
-                    src: "donkey",
-                    width: "9%",
-                    height: "19%",
-                    bottom: "6%",
-                    left: "49%",
-                    opacity: "0.7"
+                    src: "lion",
+                    width: "38%",
+                    height: "56%",
+                    top: "0%",
+                    left: "14%",
+                    opacity: "0.2"
                 },
                 {
-                    src: "bridge",
-                    width: "30%",
-                    height: "10%",
-                    bottom: "31%",
+                    src: "saber",
+                    width: "24%",
+                    height: "16%",
+                    bottom: "21%",
                     left: "51%",
-                    opacity: "0.7"
+                    opacity: "0.5"
                 }]
             return <Paint filename="la_chasse_aux_lions.jpeg" href="/artwork" paintItem={paintItem}/>
     }

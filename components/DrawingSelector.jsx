@@ -1,45 +1,48 @@
-import React from "react";
+import React from "react"
 
-import Tree from "../drawings/Tree";
-import Bike from "../drawings/Bike";
-import Bird from "../drawings/Bird";
-import Boat from "../drawings/Boat";
-import Bridge from "../drawings/Bridge";
-import Cart from "../drawings/Cart";
-import Cloud from "../drawings/Cloud";
-import Dog from "../drawings/Dog";
-import Horse from "../drawings/Horse";
-import Lion from "../drawings/Lion";
-import Saber from "../drawings/Saber";
-import Tiger from "../drawings/Tiger";
+import Tree from "../drawings/Tree"
+import Bike from "../drawings/Bike"
+import Bird from "../drawings/Bird"
+import Boat from "../drawings/Boat"
+import Bridge from "../drawings/Bridge"
+import Cart from "../drawings/Cart"
+import Cloud from "../drawings/Cloud"
+import Dog from "../drawings/Dog"
+import Horse from "../drawings/Horse"
+import Lion from "../drawings/Lion"
+import Saber from "../drawings/Saber"
+import Tiger from "../drawings/Tiger"
+import Human from "../drawings/Human"
 
-export default function DrawingSelector(props) {
+export default function DrawingSelector (props) {
     switch (props.drawing) {
         case "tree":
-            return <Tree />;
+            return <Tree/>
         case "donkey":
-            return <Horse />;
+            return <Horse/>
         case "bridge":
-            return <Bridge />;
+            return <Bridge/>
         case "boat":
-            return <Boat />;
+            return <Boat/>
         case "bird":
-            return <Bird />;
+            return <Bird/>
         case "bike":
-            return <Bike />;
+            return <Bike/>
         case "cloud":
-            return <Cloud />;
+            return <Cloud/>
         case "dog":
-            return <Dog />;
+            return <Dog/>
         case "cart":
-            return <Cart />;
+            return <Cart/>
         case "lion":
-            return <Lion />;
+            return <Lion/>
         case "saber":
-            return <Saber />;
+            return <Saber/>
         case "tiger":
-            return <Tiger />;
+            return <Tiger/>
+        case "human":
+            return <Human/>
         default:
-            return <Horse />;
+            return <Horse/>
     }
 }
