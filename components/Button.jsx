@@ -1,14 +1,16 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
-import React, { forwardRef } from "react";
+import { css } from "@emotion/react"
+import styled from "@emotion/styled"
+import React, { forwardRef } from "react"
+import { motion } from "framer-motion"
 
 const Button = forwardRef((props, ref) => (
-    <Btn id={props.id} onClick={props.onClick} layout={props.layout} arrow={props.arrow}>
+    <Btn whileTap={{ scale: 0.9 }} id={props.id} onClick={props.onClick} layout={props.layout}
+         arrow={props.arrow}>
         {props.children}
     </Btn>
-));
+))
 
-export default Button;
+export default Button
 
 const btnBaseStyle = css`
     border: none;
@@ -20,7 +22,7 @@ const btnBaseStyle = css`
     border-radius: 4px;
     cursor: pointer;
     transition: 0.3s ease;
-`;
+`
 
 const primaryBtn = css`
     color: #ffffff;
@@ -29,7 +31,7 @@ const primaryBtn = css`
     &:hover {
         background-color: #333333;
     }
-`;
+`
 
 const secondaryBtn = css`
     box-shadow: inset 0 0 0 1px #1a1a1a;
@@ -39,23 +41,23 @@ const secondaryBtn = css`
     &:hover {
         box-shadow: inset 0 0 0 2px #1a1a1a;
     }
-`;
+`
 
 const leftArrow = css`
     &:before {
         content: "← ";
     }
-`;
+`
 
 const rightArrow = css`
     &:after {
         content: " →";
     }
-`;
+`
 
-const Btn = styled.button`
+const Btn = styled(motion.button)`
     ${btnBaseStyle}
     ${(props) => (props.layout === "secondary" ? secondaryBtn : primaryBtn)}
     ${(props) => props.arrow === "left" && leftArrow}
     ${(props) => props.arrow === "right" && rightArrow}
-`;
+`

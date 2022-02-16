@@ -60,8 +60,11 @@ export default function conclusion () {
         case 3:
             return <Container>
                 <Grid slide="3">
+                    <Item name="header">
+                        <Header style={{ marginBottom: "1rem" }}/>
+                    </Item>
                     <Item name="illustration">
-                        <Illustration style={{ width: "100%" }} src="/illustrations/mother&director.png"/>
+                        <Illustration src="/illustrations/mother&director.png"/>
                     </Item>
                     <Item name="postit">
                         <PostIt>La directrice du musée parle à ta mère.</PostIt>
@@ -118,7 +121,7 @@ export default function conclusion () {
                     </Item>
                 </Grid>
                 <Scheme top="10"/>
-                <Pen bottom="2" />
+                <Pen bottom="2"/>
                 <Pencil bottom="20" left="0"/>
                 <Tube right="0" bottom="5"/>
                 <Brush top="5" right="0"/>
@@ -127,7 +130,7 @@ export default function conclusion () {
 }
 
 const Illustration = styled.img`
-   width: 75%;
+    height: 40vh;
   `
 
 const Grid = styled.div`

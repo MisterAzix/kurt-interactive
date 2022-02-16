@@ -176,6 +176,7 @@ const Board = styled.div`
     height: 50%;
     border: 2px #1a1a1a solid;
     border-radius: 4px;
+    overflow: hidden;
 
     div {
         position: absolute;

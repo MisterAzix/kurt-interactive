@@ -161,6 +161,7 @@ const BagContainer = styled(motion.div)`
     cursor: pointer;
     position: absolute;
     right: 5%;
+    user-select:none;
 
     span {
         font-size: 0.875rem;
@@ -169,7 +170,7 @@ const BagContainer = styled(motion.div)`
     b {
         position: absolute;
         top: 0;
-        left: 20px;
+        left: 14px;
     }
 `
 
@@ -186,6 +187,7 @@ const ItemsModal = styled.div`
     right: 0;
     left: 0;
     grid-area: paint;
+    flex-wrap: wrap;
 `
 
 const InventoryItem = styled.div`
