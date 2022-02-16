@@ -82,27 +82,27 @@ const Chapter = () => {
             )
         case 2:
             const paintItem = [{
-                src: "tree",
-                width: "34%",
-                height: "54%",
-                top: "7%",
-                left: "69%",
+                src: "cart",
+                width: "24%",
+                height: "17%",
+                bottom: "13%",
+                left: "76%",
                 opacity: "0.4"
             },
                 {
-                    src: "donkey",
-                    width: "9%",
-                    height: "19%",
-                    bottom: "6%",
-                    left: "49%",
-                    opacity: "0.7"
-                },
-                {
-                    src: "bridge",
+                    src: "human",
                     width: "30%",
-                    height: "10%",
-                    bottom: "31%",
-                    left: "51%",
+                    height: "23%",
+                    bottom: "5%",
+                    left: "35%",
+                    opacity: "0.6"
+
+                }, {
+                    src: "dog",
+                    width: "14%",
+                    height: "13%",
+                    bottom: "-2%",
+                    left: "72%",
                     opacity: "0.7"
                 }]
             return <Paint filename="vue_des_falaises_de_houlgate.jpeg" href="/chapter/3" paintItem={paintItem}/>
