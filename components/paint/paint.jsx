@@ -170,7 +170,7 @@ const BagContainer = styled(motion.div)`
     b {
         position: absolute;
         top: 0;
-        left: 20px;
+        left: 14px;
     }
 `
 
