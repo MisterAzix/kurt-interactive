@@ -7,7 +7,6 @@ import Button from "../../components/Button"
 import PostIt from "../../components/PostIt"
 
 import Footstep from "../../drawings/Footstep"
-import Clic from "../../drawings/Clic"
 import Paint from "../../components/paint/paint"
 
 const Chapter = () => {
@@ -40,7 +39,7 @@ const Chapter = () => {
                         </Item>
                         <Item name="postit">
                             <PostItContainer>
-                                <PostIt>Dirige-toi maintenant vers le tableau avec une peluche en dessous.</PostIt>
+                                <PostIt>Dirige-toi maintenant vers le tableau avec un ballon en dessous.</PostIt>
                             </PostItContainer>
                         </Item>
                         <Item name="button">
@@ -53,34 +52,8 @@ const Chapter = () => {
                     </Grid>
                 </Container>
             )
+
         case 1:
-            return (
-                <Container>
-                    <Grid>
-                        <Item name="header">
-                            <Header/>
-                        </Item>
-                        <Item name="illustration">
-                            <Painting src="/paints/vue_des_falaises_de_houlgate.jpeg" alt=""/>
-                            <Clic top="100"/>
-                        </Item>
-                        <Item name="postit">
-                            <PostItContainer>
-                                <PostIt>
-                                    Pour jouer, selectionne les éléments dans le tableau puis ajoute les dans ton
-                                    inventaire.
-                                </PostIt>
-                            </PostItContainer>
-                        </Item>
-                        <Item name="button">
-                            <Button arrow="right" onClick={handleNextSlide}>
-                                C’est parti !
-                            </Button>
-                        </Item>
-                    </Grid>
-                </Container>
-            )
-        case 2:
             const paintItem = [{
                 src: "cart",
                 width: "24%",
@@ -138,7 +111,8 @@ const Item = styled.div`
 const Painting = styled.img`
     width: ${(props) => props.width || 90}%;
     padding: 4rem;
-    background: center / contain no-repeat url("/frame.svg");
+    background: center / calc(100% + -0.5rem) 100% no-repeat url("/frame.svg");
+    background-position-x: calc(50% - 0.25rem);
 `
 
 const PostItContainer = styled.div`
