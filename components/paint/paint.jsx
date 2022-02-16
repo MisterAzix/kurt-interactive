@@ -187,6 +187,7 @@ const ItemsModal = styled.div`
     right: 0;
     left: 0;
     grid-area: paint;
+    flex-wrap: wrap;
 `
 
 const InventoryItem = styled.div`
