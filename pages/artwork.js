@@ -12,6 +12,7 @@ import { useInventoryContext } from "../lib/context";
 import Header from "../components/Header";
 import PostIt from "../components/PostIt";
 import Button from "../components/Button";
+import DrawingSelector from "../components/DrawingSelector";
 
 const Artwork = () => {
     const [artworkState, setArtworkState] = useState(0);
@@ -34,6 +35,8 @@ const Artwork = () => {
     };
 
     const handleUse = (e) => {
+        console.log(e.target);
+
         setBoard([...board, inventory[e.target.id]]);
         setInventory((prevState) => prevState.filter((_, i) => i != e.target.id));
     };
@@ -73,16 +76,22 @@ const Artwork = () => {
                         <Item name="board">
                             <Board ref={containerRef}>
                                 {board.map((item, key) => (
-                                    <motion.div key={key} drag dragConstraints={containerRef} dragMomentum={false}>
-                                        <Button>{item}</Button>
-                                    </motion.div>
+                                    <Drawing
+                                        scale="6"
+                                        key={key}
+                                        drag
+                                        dragConstraints={containerRef}
+                                        dragMomentum={false}
+                                    >
+                                        <DrawingSelector drawing={item} />
+                                    </Drawing>
                                 ))}
                             </Board>
                             <Inventory>
                                 {inventory.map((item, key) => (
-                                    <Button onClick={handleUse} id={key} key={key}>
-                                        {item}
-                                    </Button>
+                                    <Drawing scale="4" onClick={handleUse} id={key} key={key}>
+                                        <DrawingSelector drawing={item} />
+                                    </Drawing>
                                 ))}
                             </Inventory>
                         </Item>
@@ -163,19 +172,17 @@ const Item = styled.div`
 
 const Board = styled.div`
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 90%;
     height: 50%;
     border: 2px #1a1a1a solid;
     border-radius: 4px;
 
-    /* div {
+    div {
         position: absolute;
+        display: inline-block;
         top: 40%;
         left: 40%;
-    } */
+    }
 `;
 
 const Inventory = styled.div`
@@ -189,4 +196,19 @@ const Inventory = styled.div`
     padding: 1rem;
     border: 2px #1a1a1a solid;
     border-radius: 4px;
+`;
+
+const Drawing = styled(motion.div)`
+    position: relative;
+    height: ${(props) => props.scale || 8}rem;
+    width: ${(props) => props.scale || 8}rem;
+
+    svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        max-height: 100%;
+        max-width: 100%;
+        pointer-events: none;
+    }
 `;
