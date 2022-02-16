@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 export default function Cloud (props) {
     return (
-        <Svg animate={{ x: [0, 20, 0], y: [10, 1, 20], scale: [1, 1.1, 1] }}
+        <Svg animate={{ x: [0, 20, 0], y: [10, 1, 20, 10], scale: [1, 1.1, 1] }}
              transition={{ duration: 20, repeat: Infinity }} {...props}
              width="151" height="85" viewBox="0 0 151 85" fill="black"
              xmlns="http://www.w3.org/2000/svg">
