@@ -8,6 +8,12 @@ import PostIt from "../../components/PostIt"
 
 import Footstep from "../../drawings/Footstep"
 import Paint from "../../components/paint/paint"
+import Bike from "../../drawings/Bike"
+import Car from "../../drawings/Car"
+import Truck from "../../drawings/Truck"
+import Star from "../../drawings/Star"
+import Zigzag from "../../drawings/Zigzag"
+import Circle from "../../drawings/Circle"
 
 const Chapter = () => {
     const [slide, SetSlide] = useState(0)
@@ -50,6 +56,12 @@ const Chapter = () => {
                             )}
                         </Item>
                     </Grid>
+                    <Bike bottom="5" right="-5"/>
+                    <Car bottom="15" left="0"/>
+                    <Truck bottom="15" right="15"/>
+                    <Star top="48" left="24"/>
+                    <Zigzag bottom="20" right="40"/>
+                    <Circle top="52" right="25"/>
                 </Container>
             )
 
@@ -116,5 +128,6 @@ const Painting = styled.img`
 `
 
 const PostItContainer = styled.div`
+    z-index: 1;
     margin-top: 4rem;
 `

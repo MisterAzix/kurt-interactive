@@ -9,6 +9,13 @@ import PostIt from "../../components/PostIt"
 import Footstep from "../../drawings/Footstep"
 import Clic from "../../drawings/Clic"
 import Paint from "../../components/paint/paint"
+import Bear from "../../drawings/Bear"
+import Truck from "../../drawings/Truck"
+import Bike from "../../drawings/Bike"
+import Car from "../../drawings/Car"
+import Star from "../../drawings/Star"
+import Zigzag from "../../drawings/Zigzag"
+import Circle from "../../drawings/Circle"
 
 const Chapter = () => {
     const [slide, SetSlide] = useState(0)
@@ -51,6 +58,11 @@ const Chapter = () => {
                             )}
                         </Item>
                     </Grid>
+                    <Bear bottom="2" right="0"/>
+                    <Truck bottom="15" left="0"/>
+                    <Star bottom="48" left="24"/>
+                    <Zigzag bottom="20" left="40"/>
+                    <Circle bottom="52" right="25"/>
                 </Container>
             )
         case 1:
@@ -67,7 +79,7 @@ const Chapter = () => {
                         <Item name="postit">
                             <PostItContainer>
                                 <PostIt>
-                                    Pour jouer, selectionne les éléments dans le tableau puis ajoute les dans ton
+                                    Pour jouer, sélectionne les éléments dans le tableau puis ajoute les dans ton
                                     inventaire.
                                 </PostIt>
                             </PostItContainer>
@@ -78,6 +90,12 @@ const Chapter = () => {
                             </Button>
                         </Item>
                     </Grid>
+                    <Bike bottom="5" right="-5"/>
+                    <Car bottom="15" left="0"/>
+                    <Truck bottom="15" right="15"/>
+                    <Star top="48" left="24"/>
+                    <Zigzag bottom="20" right="40"/>
+                    <Circle top="52" right="25"/>
                 </Container>
             )
         case 2:
@@ -153,4 +171,5 @@ const Painting = styled.img`
 
 const PostItContainer = styled.div`
     margin-top: 4rem;
+    z-index: 1;
 `

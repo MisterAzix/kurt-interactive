@@ -3,7 +3,7 @@ import React, { useRef } from "react"
 import { Container } from "../shared/styles"
 import { Player } from "@lottiefiles/react-lottie-player"
 
-import transition from "../lotties/transition.json"
+import transition from "../lib/lotties/transition.json"
 import styled from "@emotion/styled"
 
 export default function Transition () {
