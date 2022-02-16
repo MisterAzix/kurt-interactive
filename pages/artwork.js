@@ -50,10 +50,10 @@ const Artwork = () => {
                             <PostIt rotation={-5}>Ton dessin est terminé !</PostIt>
                         </Item>
                         <Item name="board">
-                            <Board ref={containerFinalRef}></Board>
+                            <Board ref={containerFinalRef}/>
                         </Item>
                         <Item name="button">
-                            <Link href="/galery">
+                            <Link href="/conclusion">
                                 <Button arrow="right">Suivant</Button>
                             </Link>
                         </Item>

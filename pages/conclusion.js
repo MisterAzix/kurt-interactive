@@ -7,6 +7,11 @@ import { css } from "@emotion/react"
 import Header from "../components/Header"
 import Dialog from "../components/Dialog"
 import Link from "next/link"
+import Scheme from "../drawings/Scheme"
+import Pen from "../drawings/Pen"
+import Pencil from "../drawings/Pencil"
+import Brush from "../drawings/Brush"
+import Tube from "../drawings/Tube"
 
 export default function conclusion () {
     const [slide, setSlide] = useState(1)
@@ -55,9 +60,6 @@ export default function conclusion () {
         case 3:
             return <Container>
                 <Grid slide="3">
-                    <Item name="header">
-                        <Header/>
-                    </Item>
                     <Item name="illustration">
                         <Illustration style={{ width: "100%" }} src="/illustrations/mother&director.png"/>
                     </Item>
@@ -100,8 +102,8 @@ export default function conclusion () {
                         <Header/>
                     </Item>
                     <Item name="postit" style={{ justifyContent: "center" }}>
-                        <PostIt>Tu as accompli ton objectif !<br/>
-                            Ta mère t’a inscrit à un cours de dessin !<br/>
+                        <PostIt>Tu as accompli ton objectif !<br/><br/>
+                            Ta mère t’a inscrit à un cours de dessin !<br/><br/>
                             Tu peux partager ton tableau et regarder celui des précédents joueurs !</PostIt>
                     </Item>
                     <Item name="button" style={{ display: "flex", gap: "1rem" }}>
@@ -115,6 +117,11 @@ export default function conclusion () {
                         </Link>
                     </Item>
                 </Grid>
+                <Scheme top="10"/>
+                <Pen bottom="2" />
+                <Pencil bottom="20" left="0"/>
+                <Tube right="0" bottom="5"/>
+                <Brush top="5" right="0"/>
             </Container>
     }
 }
