@@ -11,34 +11,9 @@ import Header from "../Header"
 import PaintItem from "./PaintItem"
 import Link from "next/link"
 
-export default function Paint () {
+export default function Paint (props) {
     const [isPressed, setIsPressed] = useState(false)
-    const [paintItem, setPaintItem] = useState([
-        {
-            src: "tree",
-            width: "34%",
-            height: "54%",
-            top: "7%",
-            left: "69%",
-            opacity: "0.4"
-        },
-        {
-            src: "donkey",
-            width: "9%",
-            height: "19%",
-            bottom: "6%",
-            left: "49%",
-            opacity: "0.7"
-        },
-        {
-            src: "bridge",
-            width: "30%",
-            height: "10%",
-            bottom: "31%",
-            left: "51%",
-            opacity: "0.7"
-        }
-    ])
+    const [paintItem, setPaintItem] = useState(props.paintItem)
     const { inventory, setInventory } = useInventoryContext([])
 
     function PickItem (item) {
@@ -65,7 +40,7 @@ export default function Paint () {
                 </Item>
                 <PaintImgArea>
                     <PaintImgContainer>
-                        <PaintImg src="/paints/vue_de_bordeaux_prise_de_floirac.jpg"/>
+                        <PaintImg src={`/paints/${props.filename}`}/>
                         {paintItem.map((item) => {
                             return (
                                 <PaintItem
@@ -92,7 +67,7 @@ export default function Paint () {
                     </ItemsModal>
                 ) : null}
                 <Interaction name="button">
-                    <Link href="/artwork">
+                    <Link href={props.href}>
                         <Button>J'ai terminé</Button>
                     </Link>
                     <BagContainer
