@@ -17,7 +17,7 @@ const Galery = ({ artworks }) => (
 
 export default Galery;
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
     let db = await connectToDatabase();
     let artworks = await db.collection("artworks").find({}).sort({ published: -1 }).toArray();
 
