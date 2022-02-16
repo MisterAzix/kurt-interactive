@@ -1,30 +1,30 @@
-import styled from "@emotion/styled";
-import { Container } from "../../shared/styles";
-import { useEffect, useState } from "react";
+import styled from "@emotion/styled"
+import { Container } from "../../shared/styles"
+import { useEffect, useState } from "react"
 
-import Header from "../../components/Header";
-import Button from "../../components/Button";
-import PostIt from "../../components/PostIt";
+import Header from "../../components/Header"
+import Button from "../../components/Button"
+import PostIt from "../../components/PostIt"
 
-import Footstep from "../../drawings/Footstep";
-import Clic from "../../drawings/Clic";
-import Paint from "../../components/paint/paint";
+import Footstep from "../../drawings/Footstep"
+import Clic from "../../drawings/Clic"
+import Paint from "../../components/paint/paint"
 
 const Chapter = () => {
-    const [slide, SetSlide] = useState(0);
-    const [start, setStart] = useState(false);
+    const [slide, SetSlide] = useState(0)
+    const [start, setStart] = useState(false)
 
     useEffect(() => {
-        let startTimeout = setTimeout(() => setStart(true), 5000);
+        let startTimeout = setTimeout(() => setStart(true), 5000)
 
         return () => {
-            clearTimeout(startTimeout);
-        };
-    }, []);
+            clearTimeout(startTimeout)
+        }
+    }, [])
 
     const handleNextSlide = () => {
-        SetSlide(slide + 1);
-    };
+        SetSlide(slide + 1)
+    }
 
     switch (slide) {
         default:
@@ -32,11 +32,11 @@ const Chapter = () => {
                 <Container>
                     <Grid>
                         <Item name="header">
-                            <Header />
+                            <Header/>
                         </Item>
                         <Item name="illustration">
-                            <Painting src="/paints/vue_de_bordeaux_prise_de_floirac.jpg" alt="" />
-                            <Footstep top="90" />
+                            <Painting src="/paints/vue_de_bordeaux_prise_de_floirac.jpg" alt=""/>
+                            <Footstep top="90"/>
                         </Item>
                         <Item name="postit">
                             <PostItContainer>
@@ -52,17 +52,17 @@ const Chapter = () => {
                         </Item>
                     </Grid>
                 </Container>
-            );
+            )
         case 1:
             return (
                 <Container>
                     <Grid>
                         <Item name="header">
-                            <Header />
+                            <Header/>
                         </Item>
                         <Item name="illustration">
-                            <Painting src="/paints/vue_de_bordeaux_prise_de_floirac.jpg" alt="" />
-                            <Clic top="100" />
+                            <Painting src="/paints/vue_de_bordeaux_prise_de_floirac.jpg" alt=""/>
+                            <Clic top="100"/>
                         </Item>
                         <Item name="postit">
                             <PostItContainer>
@@ -79,13 +79,37 @@ const Chapter = () => {
                         </Item>
                     </Grid>
                 </Container>
-            );
+            )
         case 2:
-            return <Paint />;
+            const paintItem = [{
+                src: "tree",
+                width: "34%",
+                height: "54%",
+                top: "7%",
+                left: "69%",
+                opacity: "0.4"
+            },
+                {
+                    src: "donkey",
+                    width: "9%",
+                    height: "19%",
+                    bottom: "6%",
+                    left: "49%",
+                    opacity: "0.7"
+                },
+                {
+                    src: "bridge",
+                    width: "30%",
+                    height: "10%",
+                    bottom: "31%",
+                    left: "51%",
+                    opacity: "0.7"
+                }]
+            return <Paint filename="vue_de_bordeaux_prise_de_floirac.jpg" href="/chapter/2" paintItem={paintItem}/>
     }
-};
+}
 
-export default Chapter;
+export default Chapter
 
 const Grid = styled.div`
     display: grid;
@@ -99,7 +123,7 @@ const Grid = styled.div`
         "illustration"
         "postit"
         "button";
-`;
+`
 
 const Item = styled.div`
     position: relative;
@@ -109,14 +133,14 @@ const Item = styled.div`
     justify-content: center;
     align-items: center;
     gap: 3rem;
-`;
+`
 
 const Painting = styled.img`
     width: ${(props) => props.width || 90}%;
     padding: 4rem;
     background: center / contain no-repeat url("/frame.svg");
-`;
+`
 
 const PostItContainer = styled.div`
     margin-top: 4rem;
-`;
+`
