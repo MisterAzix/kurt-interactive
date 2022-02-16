@@ -147,7 +147,8 @@ const Item = styled.div`
 const Painting = styled.img`
     width: ${(props) => props.width || 90}%;
     padding: 4rem;
-    background: center / contain no-repeat url("/frame.svg");
+    background: center / calc(100% + -0.5rem) 100% no-repeat url("/frame.svg");
+    background-position-x: calc(50% - 0.25rem);
 `
 
 const PostItContainer = styled.div`
