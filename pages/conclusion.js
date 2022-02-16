@@ -127,7 +127,7 @@ export default function conclusion () {
 }
 
 const Illustration = styled.img`
-   width: 75%;
+   // width: 75%;
   `
 
 const Grid = styled.div`

@@ -161,6 +161,7 @@ const BagContainer = styled(motion.div)`
     cursor: pointer;
     position: absolute;
     right: 5%;
+    user-select:none;
 
     span {
         font-size: 0.875rem;
