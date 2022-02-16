@@ -24,7 +24,9 @@ const Home = () => (
                 <Link href="/introduction">
                     <Button>Commencer l’expérience</Button>
                 </Link>
-                <Button layout="secondary">Crédits</Button>
+                <Link href="/credits">
+                    <Button layout="secondary">Crédits</Button>
+                </Link>
             </Item>
         </Grid>
         <Sun top="5" right="10" />
