@@ -6,6 +6,7 @@ import Button from "../components/Button"
 import { css } from "@emotion/react"
 import Header from "../components/Header"
 import Dialog from "../components/Dialog"
+import Link from "next/link"
 
 export default function conclusion () {
     const [slide, setSlide] = useState(1)
@@ -84,10 +85,34 @@ export default function conclusion () {
                         <Illustration src="/illustrations/mother_laughing.png"/>
                     </Item>
                     <Item name="postit">
-                        <PostIt>Je n’avais pas vu cela sous cet angle ! Kurt, tu es très créatif, je suis fier de toi !</PostIt>
+                        <PostIt>Je n’avais pas vu cela sous cet angle ! Kurt, tu es très créatif, je suis fier de toi
+                            !</PostIt>
                     </Item>
                     <Item name="button">
                         <Button onClick={handleNext} arrow="right">Suivant</Button>
+                    </Item>
+                </Grid>
+            </Container>
+        case 5:
+            return <Container>
+                <Grid slide="5">
+                    <Item name="header">
+                        <Header/>
+                    </Item>
+                    <Item name="postit" style={{ justifyContent: "center" }}>
+                        <PostIt>Tu as accompli ton objectif !<br/>
+                            Ta mère t’a inscrit à un cours de dessin !<br/>
+                            Tu peux partager ton tableau et regarder celui des précédents joueurs !</PostIt>
+                    </Item>
+                    <Item name="button" style={{ display: "flex", gap: "1rem" }}>
+                        <Link href="/">
+                            <Button>Partager mon tableau</Button>
+                        </Link>
+                        <Link href="/">
+                            <Button layout="secondary">
+                                Retourner à l’accueil
+                            </Button>
+                        </Link>
                     </Item>
                 </Grid>
             </Container>
@@ -114,6 +139,14 @@ const Grid = styled.div`
                         "illustration"
                         "postit"
                         "dialog"
+                        "button";
+            `
+        case "5":
+            return css`
+                grid-template-rows: min-content 1fr min-content min-content 20vh;
+                grid-template-areas:
+                        "header"
+                        "postit"
                         "button";
             `
         default:
