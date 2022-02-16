@@ -1,11 +1,12 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 import { useState } from "react";
 import { Container } from "../shared/styles";
+import Link from "next/link";
 
 import Header from "../components/Header";
 import PostIt from "../components/PostIt";
 import Button from "../components/Button";
-import { css } from "@emotion/react";
 import Dialog from "../components/Dialog";
 
 const Introduction = () => {
@@ -104,7 +105,9 @@ const Introduction = () => {
                             </PostIt>
                         </Item>
                         <Item name="button">
-                            <Button arrow="right" /* onClick={handleNext} */>C'est parti !</Button>
+                            <Link href="/chapter/1">
+                                <Button arrow="right">C'est parti !</Button>
+                            </Link>
                         </Item>
                     </Grid>
                 </Container>
