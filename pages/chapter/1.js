@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import { css } from "@emotion/react";
 import { Container } from "../../shared/styles";
 import { useEffect, useState } from "react";
 
@@ -36,7 +35,7 @@ const Chapter = () => {
                             <Header />
                         </Item>
                         <Item name="illustration">
-                            <Paiting src="/paints/vue_de_bordeaux_prise_de_floirac.jpg" alt="" />
+                            <Painting src="/paints/vue_de_bordeaux_prise_de_floirac.jpg" alt="" />
                             <Footstep top="90" />
                         </Item>
                         <Item name="postit">
@@ -62,7 +61,7 @@ const Chapter = () => {
                             <Header />
                         </Item>
                         <Item name="illustration">
-                            <Paiting src="/paints/vue_de_bordeaux_prise_de_floirac.jpg" alt="" />
+                            <Painting src="/paints/vue_de_bordeaux_prise_de_floirac.jpg" alt="" />
                             <Clic top="100" />
                         </Item>
                         <Item name="postit">
@@ -112,10 +111,10 @@ const Item = styled.div`
     gap: 3rem;
 `;
 
-const Paiting = styled.img`
+const Painting = styled.img`
     width: ${(props) => props.width || 90}%;
-    padding: 3rem;
-    background: center / contain no-repeat url("/frame.png");
+    padding: 4rem;
+    background: center / contain no-repeat url("/frame.svg");
 `;
 
 const PostItContainer = styled.div`
