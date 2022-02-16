@@ -81,14 +81,23 @@ const Chapter = () => {
                 </Container>
             )
         case 2:
-            const paintItem = [{
-                src: "tree",
-                width: "34%",
-                height: "54%",
-                top: "7%",
-                left: "69%",
-                opacity: "0.4"
-            },
+            const paintItem = [
+                {
+                    src: "boat",
+                    width: "14%",
+                    height: "12%",
+                    bottom: "24%",
+                    left: "13%",
+                    opacity: "0.8"
+                },
+                {
+                    src: "tree",
+                    width: "34%",
+                    height: "54%",
+                    top: "7%",
+                    left: "69%",
+                    opacity: "0.4"
+                },
                 {
                     src: "donkey",
                     width: "9%",
