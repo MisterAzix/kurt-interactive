@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import { useEffect, useState } from "react";
-import { Container } from "../shared/styles";
 
 const Galery = () => {
     const [artworks, setArtworks] = useState([]);
@@ -24,9 +23,9 @@ const Galery = () => {
     return (
         <Container>
             <GaleryContainer>
-                {artworks.map((artwork, key) => (
+                {artworks.reverse().map((artwork, key) => (
                     <div key={key}>
-                        <img width="100px" src={artwork.image_link} alt="" />
+                        <img width="256px" src={artwork.image_link} alt="" />
                     </div>
                 ))}
             </GaleryContainer>
@@ -35,6 +34,15 @@ const Galery = () => {
 };
 
 export default Galery;
+
+const Container = styled.div`
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    /* background: center / cover no-repeat url("/paper_texture_background.png"), #fefef2; */
+    background-color: #fefef2;
+`;
 
 const GaleryContainer = styled.ul`
     display: flex;
