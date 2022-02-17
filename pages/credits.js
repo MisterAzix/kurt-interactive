@@ -26,7 +26,14 @@ const Credits = () => {
                         <Header />
                     </Item>
                     <Item name="content">
-                        <h1>Crédits</h1>
+                        <Title>Crédits</Title>
+                        <CreditsContainer>
+                            <p>
+                                MMI Bordeaux
+                                <a href="https://www.mmibordeaux.com/" /> &<br /> Musée des Beaux-Arts
+                                <a href="https://www.musba-bordeaux.fr/" />
+                            </p>
+                        </CreditsContainer>
                         <CreditsContainer>
                             <h2>Concept</h2>
                             <p>Toute l’équipe</p>
@@ -44,7 +51,7 @@ const Credits = () => {
                         </CreditsContainer>
                         <CreditsContainer>
                             <h2>
-                                Direction Artistique <br />& Illustrations
+                                Direction Artistique &<br /> Illustrations
                             </h2>
                             <p>
                                 Marie Simonek
@@ -53,7 +60,7 @@ const Credits = () => {
                         </CreditsContainer>
                         <CreditsContainer>
                             <h2>
-                                Direction Artistique <br />& Design d’interface
+                                Direction Artistique &<br /> Design d’interface
                             </h2>
                             <p>
                                 Régis Cosaque
@@ -112,7 +119,11 @@ const Item = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
+`;
+
+const Title = styled.h1`
+    margin: 0;
 `;
 
 const CreditsContainer = styled.div`
