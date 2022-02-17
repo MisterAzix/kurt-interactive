@@ -1,10 +1,13 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import React from "react"
+import { motion } from "framer-motion"
 
 export default function Clic (props) {
     return (
-        <Svg {...props} width="59" height="95" viewBox="0 0 59 95" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <Svg {...props} width="59" height="95" viewBox="0 0 59 95" fill="none" xmlns="http://www.w3.org/2000/svg"
+             animate={{ y: [0, -10, -10, -10, 0], scale: [1, 1, 0.9, 1, 1] }}
+             transition={{ repeat: Infinity, duration: 2, repeatDelay: 2 }}>
             <mask
                 id="path-1-outside-1_488_7714"
                 maskUnits="userSpaceOnUse"
@@ -32,7 +35,7 @@ export default function Clic (props) {
     )
 }
 
-const Svg = styled.svg`
+const Svg = styled(motion.svg)`
     position: absolute;
 
     ${(props) =>
