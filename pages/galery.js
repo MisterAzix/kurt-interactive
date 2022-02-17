@@ -22,6 +22,7 @@ const Galery = () => {
 
     return (
         <Container>
+            <Title>Galerie</Title>
             <GaleryContainer>
                 {artworks.reverse().map((artwork, key) => (
                     <div key={key}>
@@ -50,4 +51,8 @@ const GaleryContainer = styled.ul`
     flex-wrap: wrap;
     gap: 1rem;
     padding: 1rem;
+`;
+
+const Title = styled.h1`
+    display: none;
 `;
