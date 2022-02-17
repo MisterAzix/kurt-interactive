@@ -1,35 +1,34 @@
-import styled from "@emotion/styled"
-import { Container } from "../../shared/styles"
-import { useEffect, useState } from "react"
+import styled from "@emotion/styled";
+import { Container } from "../../shared/styles";
+import { useEffect, useState } from "react";
 
-import Header from "../../components/Header"
-import Button from "../../components/Button"
-import PostIt from "../../components/PostIt"
+import Header from "../../components/Header";
+import Button from "../../components/Button";
+import PostIt from "../../components/PostIt";
 
-import Footstep from "../../drawings/Footstep"
-import Paint from "../../components/paint/paint"
-import Bike from "../../drawings/Bike"
-import Car from "../../drawings/Car"
-import Truck from "../../drawings/Truck"
-import Star from "../../drawings/Star"
-import Zigzag from "../../drawings/Zigzag"
-import Circle from "../../drawings/Circle"
+import Footstep from "../../drawings/Footstep";
+import Paint from "../../components/paint/paint";
+import Bike from "../../drawings/Bike";
+import Car from "../../drawings/Car";
+import Truck from "../../drawings/Truck";
+import Star from "../../drawings/Star";
+import Circle from "../../drawings/Circle";
 
 const Chapter = () => {
-    const [slide, SetSlide] = useState(0)
-    const [start, setStart] = useState(false)
+    const [slide, SetSlide] = useState(0);
+    const [start, setStart] = useState(false);
 
     useEffect(() => {
-        let startTimeout = setTimeout(() => setStart(true), 5000)
+        let startTimeout = setTimeout(() => setStart(true), 5000);
 
         return () => {
-            clearTimeout(startTimeout)
-        }
-    }, [])
+            clearTimeout(startTimeout);
+        };
+    }, []);
 
     const handleNextSlide = () => {
-        SetSlide(slide + 1)
-    }
+        SetSlide(slide + 1);
+    };
 
     switch (slide) {
         default:
@@ -37,11 +36,11 @@ const Chapter = () => {
                 <Container>
                     <Grid>
                         <Item name="header">
-                            <Header/>
+                            <Header />
                         </Item>
                         <Item name="illustration">
-                            <Painting src="/paints/vue_des_falaises_de_houlgate.jpeg" alt=""/>
-                            <Footstep top="90"/>
+                            <Painting src="/paints/vue_des_falaises_de_houlgate.jpeg" alt="" />
+                            <Footstep top="90" />
                         </Item>
                         <Item name="postit">
                             <PostItContainer>
@@ -56,45 +55,46 @@ const Chapter = () => {
                             )}
                         </Item>
                     </Grid>
-                    <Bike bottom="5" right="-5"/>
-                    <Car bottom="15" left="0"/>
-                    <Truck bottom="15" right="15"/>
-                    <Star top="48" left="24"/>
-                    <Zigzag bottom="20" left="20"/>
-                    <Circle top="52" right="25"/>
+                    <Bike bottom="5" right="-5" />
+                    <Car bottom="15" left="0" />
+                    <Truck bottom="15" right="15" />
+                    <Star top="48" left="24" />
+                    <Circle top="52" right="25" />
                 </Container>
-            )
+            );
 
         case 1:
-            const paintItem = [{
-                src: "cart",
-                width: "24%",
-                height: "17%",
-                bottom: "13%",
-                left: "76%",
-                opacity: "0.4"
-            },
+            const paintItem = [
+                {
+                    src: "cart",
+                    width: "24%",
+                    height: "17%",
+                    bottom: "13%",
+                    left: "76%",
+                    opacity: "0.4",
+                },
                 {
                     src: "human",
                     width: "30%",
                     height: "23%",
                     bottom: "5%",
                     left: "35%",
-                    opacity: "0.6"
-
-                }, {
+                    opacity: "0.6",
+                },
+                {
                     src: "dog",
                     width: "14%",
                     height: "13%",
                     bottom: "-2%",
                     left: "72%",
-                    opacity: "0.7"
-                }]
-            return <Paint filename="vue_des_falaises_de_houlgate.jpeg" href="/chapter/3" paintItem={paintItem}/>
+                    opacity: "0.7",
+                },
+            ];
+            return <Paint filename="vue_des_falaises_de_houlgate.jpeg" href="/chapter/3" paintItem={paintItem} />;
     }
-}
+};
 
-export default Chapter
+export default Chapter;
 
 const Grid = styled.div`
     display: grid;
@@ -108,7 +108,7 @@ const Grid = styled.div`
         "illustration"
         "postit"
         "button";
-`
+`;
 
 const Item = styled.div`
     position: relative;
@@ -118,16 +118,16 @@ const Item = styled.div`
     justify-content: center;
     align-items: center;
     gap: 3rem;
-`
+`;
 
 const Painting = styled.img`
     width: 24rem;
     padding: 4rem;
     background: center / calc(100% + -0.5rem) 100% no-repeat url("/frame.svg");
     background-position-x: calc(50% - 0.25rem);
-`
+`;
 
 const PostItContainer = styled.div`
     z-index: 1;
     margin-top: 4rem;
-`
+`;

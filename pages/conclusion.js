@@ -110,8 +110,8 @@ export default function conclusion () {
                             Tu peux partager ton tableau et regarder celui des précédents joueurs !</PostIt>
                     </Item>
                     <Item name="button" style={{ display: "flex", gap: "1rem" }}>
-                        <Link href="/">
-                            <Button>Partager mon tableau</Button>
+                        <Link href="/galery">
+                            <Button>Voir la galerie</Button>
                         </Link>
                         <Link href="/">
                             <Button layout="secondary">
