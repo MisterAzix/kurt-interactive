@@ -5,7 +5,9 @@ import { motion } from "framer-motion"
 
 export default function Zigzag (props) {
     return (
-        <Svg {...props} animate={{ rotate: [0, 5, 0] }} transition={{ repeat: Infinity }} width="50" height="24"
+        <Svg {...props} animate={{ rotate: [0, 5, 0] }}
+             transition={{ repeat: Infinity, type: "spring" }} width="50"
+             height="24"
              viewBox="0 0 50 24" fill="none"
              xmlns="http://www.w3.org/2000/svg">
             <path

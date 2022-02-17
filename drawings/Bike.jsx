@@ -1,12 +1,11 @@
 import { css } from "@emotion/react"
 import styled from "@emotion/styled"
 import React from "react"
-import { motion } from "framer-motion"
 
 export default function Bike (props) {
     return (
-        <Svg {...props} animate={{ rotateY: [0, 180] }}
-             transition={{ times: [0.5, 1], duration: 4, repeatType: "mirror", repeat: Infinity }}
+        <Svg {...props}
+
              width="54" height="47"
              viewBox="0 0 54 47" fill="black" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -16,7 +15,7 @@ export default function Bike (props) {
     )
 }
 
-const Svg = styled(motion.svg)`
+const Svg = styled.svg`
     position: absolute;
 
     ${(props) =>

@@ -12,8 +12,8 @@ export default function Sun (props) {
             loop
             style={{
                 position: "absolute",
-                width: "266px",
-                height: "266px",
+                width: "133px",
+                height: "133px",
                 top: props.top + "%",
                 left: props.left + "%",
                 bottom: props.bottom + "%",
