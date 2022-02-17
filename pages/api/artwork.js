@@ -1,9 +1,9 @@
 import { connectToDatabase } from "../../lib/mongodb";
 import { v2 as cloudinary } from "cloudinary";
-import multer from "multer";
+/* import multer from "multer"; */
 import nc from "next-connect";
 
-const upload = multer({ dest: '/tmp' });
+/* const upload = multer({ dest: '/tmp' }); */
 
 if (process.env.CLOUDINARY_URL) {
     const { hostname: cloud_name, username: api_key, password: api_secret } = new URL(process.env.CLOUDINARY_URL);
@@ -32,7 +32,7 @@ handler.get(async (req, res) => {
     res.json(artworks);
 });
 
-handler.post(upload.single('artworkImage'), async (req, res) => {
+handler.post(/* upload.single('artworkImage'), */ async (req, res) => {
     try {
         let artworkImage;
         if (req.body.image_url) {
