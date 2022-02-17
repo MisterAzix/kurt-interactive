@@ -91,7 +91,7 @@ const Chapter = () => {
                         </Item>
                     </Grid>
                     <Bike bottom="5" right="-5"/>
-                    <Car bottom="15" left="0"/>
+                    <Car bottom="5" left="-5"/>
                     <Truck bottom="15" right="15"/>
                     <Star top="48" left="24"/>
                     <Zigzag bottom="20" left="20"/>
@@ -100,38 +100,10 @@ const Chapter = () => {
             )
         case 2:
             const paintItem = [
-                {
-                    src: "boat",
-                    width: "14%",
-                    height: "12%",
-                    bottom: "24%",
-                    left: "13%",
-                    opacity: "0.8"
-                },
-                {
-                    src: "tree",
-                    width: "34%",
-                    height: "54%",
-                    top: "7%",
-                    left: "69%",
-                    opacity: "0.4"
-                },
-                {
-                    src: "donkey",
-                    width: "9%",
-                    height: "19%",
-                    bottom: "6%",
-                    left: "49%",
-                    opacity: "0.7"
-                },
-                {
-                    src: "bridge",
-                    width: "30%",
-                    height: "10%",
-                    bottom: "31%",
-                    left: "51%",
-                    opacity: "0.7"
-                }]
+                {src: "boat", width: "14%", height: "12%", bottom: "24%", left: "13%", opacity: "0.8"},
+                {src: "tree", width: "34%", height: "54%", top: "7%", left: "69%", opacity: "0.4"},
+                {src: "donkey", width: "9%", height: "19%", bottom: "6%", left: "49%", opacity: "0.7"},
+                {src: "bridge", width: "30%", height: "10%", bottom: "31%", left: "51%", opacity: "0.7"}]
             return <Paint filename="vue_de_bordeaux_prise_de_floirac.jpg" href="/chapter/2" paintItem={paintItem}/>
     }
 }

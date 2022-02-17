@@ -18,8 +18,7 @@ export default function Bike (props) {
                 bottom: props.bottom + "%",
                 right: props.right + "%"
             }}
-        >
-        </PlayerContainer>
+        />
     )
 }
 
