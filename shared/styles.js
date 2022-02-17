@@ -1,5 +1,5 @@
-import { css, Global } from "@emotion/react"
-import styled from "@emotion/styled"
+import { css, Global } from "@emotion/react";
+import styled from "@emotion/styled";
 
 export const globalStyles = (
     <Global
@@ -14,6 +14,17 @@ export const globalStyles = (
 
             * {
                 box-sizing: border-box;
+
+                &::-webkit-scrollbar {
+                    background-color: transparent;
+                    width: 0.6rem;
+                    height: 0.6rem;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 1rem;
+                    background: #1a1a1a;
+                }
             }
 
             html,
@@ -29,7 +40,7 @@ export const globalStyles = (
             }
         `}
     />
-)
+);
 
 export const Container = styled.div`
     position: relative;
@@ -38,4 +49,4 @@ export const Container = styled.div`
     max-width: 420px;
     overflow: hidden;
     background: right / cover no-repeat url("/paper_texture_background.png"), #fefef2;
-`
+`;
