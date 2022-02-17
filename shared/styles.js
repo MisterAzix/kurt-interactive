@@ -25,6 +25,7 @@ export const globalStyles = (
                 -webkit-font-smoothing: antialiased;
                 -moz-osx-font-smoothing: grayscale;
                 background-color: #1a1a1a;
+                font-size: 14px;
             }
         `}
     />

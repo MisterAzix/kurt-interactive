@@ -39,7 +39,7 @@ const PostItContainer = styled.div`
 
         svg {
             position: absolute;
-            left: 0.43rem;
+            left: 1px;
             width: 100%;
             top: calc(100% - 0.5rem);
         }
