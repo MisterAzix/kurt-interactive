@@ -1,20 +1,21 @@
-import styled from "@emotion/styled";
-import { css } from "@emotion/react";
-import { useState } from "react";
-import { Container } from "../shared/styles";
-import Link from "next/link";
+import styled from "@emotion/styled"
+import { css } from "@emotion/react"
+import { useState } from "react"
+import { Container } from "../shared/styles"
+import Link from "next/link"
 
-import Header from "../components/Header";
-import PostIt from "../components/PostIt";
-import Button from "../components/Button";
-import Dialog from "../components/Dialog";
+import Header from "../components/Header"
+import PostIt from "../components/PostIt"
+import Button from "../components/Button"
+import Dialog from "../components/Dialog"
+import { Player } from "@lottiefiles/react-lottie-player"
 
 const Introduction = () => {
-    const [slide, setSlide] = useState(0);
+    const [slide, setSlide] = useState(0)
 
     const handleNext = () => {
-        setSlide(slide + 1);
-    };
+        setSlide(slide + 1)
+    }
 
     switch (slide) {
         case 1:
@@ -22,10 +23,10 @@ const Introduction = () => {
                 <Container>
                     <Grid slide="1">
                         <Item name="header">
-                            <Header />
+                            <Header/>
                         </Item>
                         <Item name="illustration">
-                            <Illustration width={90} src="/illustrations/painting.png" alt="" />
+                            <Illustration width={90} src="/illustrations/painting.png" alt=""/>
                         </Item>
                         <Item name="dialog">
                             <Dialog name="KURT :">Maman, comment devenir un grand artiste ?</Dialog>
@@ -37,16 +38,19 @@ const Introduction = () => {
                         </Item>
                     </Grid>
                 </Container>
-            );
+            )
         case 2:
             return (
                 <Container>
                     <Grid slide="1">
                         <Item name="header">
-                            <Header />
+                            <Header/>
                         </Item>
                         <Item name="illustration">
-                            <Illustration width={50} src="/illustrations/mother.png" alt="" />
+
+                            <Player src={require("../lib/lotties/mother.json")} autoplay keepLastFrame style={{
+                                height: "24rem"
+                            }}/>
                         </Item>
                         <Item name="dialog">
                             <Dialog name="MÈRE DE KURT :">
@@ -61,22 +65,22 @@ const Introduction = () => {
                         </Item>
                     </Grid>
                 </Container>
-            );
+            )
         case 3:
             return (
                 <Container>
                     <Grid slide="2">
                         <Item name="header">
-                            <Header />
+                            <Header/>
                         </Item>
                         <Item name="illustration">
-                            <Illustration width={90} src="/illustrations/hands.png" alt="" />
+                            <Illustration width={90} src="/illustrations/hands.png" alt=""/>
                         </Item>
                         <Item name="postit">
                             <PostIt rotation={-5}>
                                 Tu n’es pas d’accord ! Toi aussi tu veux être un artiste !
-                                <br />
-                                <br />
+                                <br/>
+                                <br/>
                                 Tu te munis de ton carnet et pars à la découverte du musée.
                             </PostIt>
                         </Item>
@@ -87,16 +91,16 @@ const Introduction = () => {
                         </Item>
                     </Grid>
                 </Container>
-            );
+            )
         case 4:
             return (
                 <Container>
                     <Grid slide="2">
                         <Item name="header">
-                            <Header />
+                            <Header/>
                         </Item>
                         <Item name="illustration">
-                            <Illustration width={90} src="/illustrations/museum_interior.png" alt="" />
+                            <Illustration width={90} src="/illustrations/museum_interior.png" alt=""/>
                         </Item>
                         <Item name="postit">
                             <PostIt>
@@ -111,16 +115,16 @@ const Introduction = () => {
                         </Item>
                     </Grid>
                 </Container>
-            );
+            )
         default:
             return (
                 <Container>
                     <Grid slide="0">
                         <Item name="header">
-                            <Header />
+                            <Header/>
                         </Item>
                         <Item name="illustration">
-                            <Illustration src="/illustrations/museum_front.png" alt="" />
+                            <Illustration src="/illustrations/museum_front.png" alt=""/>
                             <PostItContainer>
                                 <PostIt>
                                     Hello Kurt, aujourd’hui ta maman t’emmène visiter le Musée des beaux arts de
@@ -135,11 +139,11 @@ const Introduction = () => {
                         </Item>
                     </Grid>
                 </Container>
-            );
+            )
     }
-};
+}
 
-export default Introduction;
+export default Introduction
 
 const Grid = styled.div`
     display: grid;
@@ -148,37 +152,37 @@ const Grid = styled.div`
     text-align: center;
     grid-template-columns: 1fr;
     ${(props) => {
-        switch (props.slide) {
-            case "1":
-                return css`
+    switch (props.slide) {
+        case "1":
+            return css`
                     grid-template-rows: min-content 1fr min-content 20vh;
                     grid-template-areas:
                         "header"
                         "illustration"
                         "dialog"
                         "button";
-                `;
-            case "2":
-                return css`
+                `
+        case "2":
+            return css`
                     grid-template-rows: min-content 1fr 1fr 20vh;
                     grid-template-areas:
                         "header"
                         "illustration"
                         "postit"
                         "button";
-                `;
-            default:
-                return css`
+                `
+        default:
+            return css`
                     grid-template-rows: min-content 1fr 10vh 20vh;
                     grid-template-areas:
                         "header"
                         "illustration"
                         "."
                         "button";
-                `;
-        }
-    }}
-`;
+                `
+    }
+}}
+`
 
 const Item = styled.div`
     position: relative;
@@ -188,13 +192,13 @@ const Item = styled.div`
     justify-content: center;
     align-items: center;
     gap: 3rem;
-`;
+`
 
 const Illustration = styled.img`
     width: ${(props) => props.width || 90}%;
-`;
+`
 
 const PostItContainer = styled.div`
     position: absolute;
     top: 80%;
-`;
+`

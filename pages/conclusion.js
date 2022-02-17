@@ -90,7 +90,8 @@ export default function conclusion () {
                         <Illustration src="/illustrations/mother_laughing.png"/>
                     </Item>
                     <Item name="postit">
-                        <PostIt>Je n’avais pas vu cela sous cet angle ! Kurt, tu es très créatif, je suis fier de toi
+                        <PostIt>Je n’avais pas vu cela sous cet angle ! <br/>
+                            Kurt, tu es très créatif, je suis fier de toi
                             !</PostIt>
                     </Item>
                     <Item name="button">
@@ -110,8 +111,8 @@ export default function conclusion () {
                             Tu peux partager ton tableau et regarder celui des précédents joueurs !</PostIt>
                     </Item>
                     <Item name="button" style={{ display: "flex", gap: "1rem" }}>
-                        <Link href="/">
-                            <Button>Partager mon tableau</Button>
+                        <Link href="/galery">
+                            <Button>Accéder à la gallerie</Button>
                         </Link>
                         <Link href="/">
                             <Button layout="secondary">
@@ -130,7 +131,7 @@ export default function conclusion () {
 }
 
 const Illustration = styled.img`
-    height: 40vh;
+    height: 24rem;
   `
 
 const Grid = styled.div`
@@ -150,6 +151,9 @@ const Grid = styled.div`
                         "postit"
                         "dialog"
                         "button";
+                img {
+                  height: 18rem;
+                }
             `
         case "5":
             return css`
