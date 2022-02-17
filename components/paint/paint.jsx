@@ -3,15 +3,16 @@ import { useState } from "react"
 
 import { useInventoryContext } from "../../lib/context"
 
-import DrawingSelector from "../DrawingSelector";
+import DrawingSelector from "../DrawingSelector"
 
-import PostIt from "../PostIt";
-import Button from "../Button";
-import Header from "../Header";
-import PaintItem from "./PaintItem";
+import PostIt from "../PostIt"
+import Button from "../Button"
+import Header from "../Header"
+import PaintItem from "./PaintItem"
 import styled from "@emotion/styled"
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Arrow from "../../drawings/Arrow"
 
 export default function Paint (props) {
     const [isPressed, setIsPressed] = useState(false)
@@ -40,6 +41,7 @@ export default function Paint (props) {
                 <Item name="postit">
                     <PostIt> {props.href === "/artwork" ? "Tu connais la chanson! À toi de jouer!" : "Clique sur les éléments du tableau pour les mettre dans ton inventaire."} </PostIt>
                 </Item>
+                    {/*<Arrow top={50} right={0}/>*/}
                 <PaintImgArea>
                     <PaintImgContainer>
                         <PaintImg src={`/paints/${props.filename}`}/>
