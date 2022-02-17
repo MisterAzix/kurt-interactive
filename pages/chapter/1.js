@@ -94,7 +94,7 @@ const Chapter = () => {
                     <Car bottom="15" left="0"/>
                     <Truck bottom="15" right="15"/>
                     <Star top="48" left="24"/>
-                    <Zigzag bottom="20" right="40"/>
+                    <Zigzag bottom="20" left="20"/>
                     <Circle top="52" right="25"/>
                 </Container>
             )
@@ -163,7 +163,7 @@ const Item = styled.div`
 `
 
 const Painting = styled.img`
-    width: ${(props) => props.width || 90}%;
+    width: 24rem;
     padding: 4rem;
     background: center / calc(100% + -0.5rem) 100% no-repeat url("/frame.svg");
     background-position-x: calc(50% - 0.25rem);
