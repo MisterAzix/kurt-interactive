@@ -25,6 +25,13 @@ const handler = nc({
     },
 });
 
+handler.get(async (req, res) => {
+    let db = await connectToDatabase();
+    let artworks = await db.collection("artworks").find({}).sort({ published: -1 }).toArray();
+
+    res.json(artworks);
+});
+
 handler.post(upload.single('artworkImage'), async (req, res) => {
     try {
         let artworkImage;

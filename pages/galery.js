@@ -1,28 +1,40 @@
 import styled from "@emotion/styled";
-import { connectToDatabase } from "../lib/mongodb";
+import { useEffect, useState } from "react";
 import { Container } from "../shared/styles";
 
-const Galery = ({ artworks }) => (
-    <Container>
-        <GaleryContainer>
-            {artworks &&
-                JSON.parse(artworks).map((artwork, key) => (
+const Galery = () => {
+    const [artworks, setArtworks] = useState([]);
+
+    useEffect(() => {
+        fetchArtwork();
+        let fetchInterval = setInterval(fetchArtwork, 10000);
+
+        return () => {
+            clearInterval(fetchInterval);
+        };
+    }, []);
+
+    const fetchArtwork = async () => {
+        let res = await fetch("/api/artwork");
+        let json = await res.json();
+
+        setArtworks(json);
+    };
+
+    return (
+        <Container>
+            <GaleryContainer>
+                {artworks.map((artwork, key) => (
                     <div key={key}>
                         <img width="100px" src={artwork.image_link} alt="" />
                     </div>
                 ))}
-        </GaleryContainer>
-    </Container>
-);
+            </GaleryContainer>
+        </Container>
+    );
+};
 
 export default Galery;
-
-export const getServerSideProps = async () => {
-    let db = await connectToDatabase();
-    let artworks = await db.collection("artworks").find({}).sort({ published: -1 }).toArray();
-
-    return { props: { artworks: JSON.stringify(artworks) } };
-};
 
 const GaleryContainer = styled.ul`
     display: flex;
