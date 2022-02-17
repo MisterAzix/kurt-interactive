@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import Head from "next/head";
 import { useEffect, useState } from "react";
 
 const Galery = () => {
@@ -21,16 +22,25 @@ const Galery = () => {
     };
 
     return (
-        <Container>
-            <Title>Galerie</Title>
-            <GaleryContainer>
-                {artworks.reverse().map((artwork, key) => (
-                    <div key={key}>
-                        <img width="256px" src={artwork.image_link} alt="" />
-                    </div>
-                ))}
-            </GaleryContainer>
-        </Container>
+        <>
+            <Head>
+                <title>Kurt - Galery</title>
+                <meta
+                    name="description"
+                    content="Kurt Interactive is a narrative and interactive experience where you play as Kurt, a 6 year old child who wants to create."
+                />
+            </Head>
+            <Container>
+                <Title>Galerie</Title>
+                <GaleryContainer>
+                    {artworks.reverse().map((artwork, key) => (
+                        <div key={key}>
+                            <img width="256px" src={artwork.image_link} alt="" />
+                        </div>
+                    ))}
+                </GaleryContainer>
+            </Container>
+        </>
     );
 };
 
