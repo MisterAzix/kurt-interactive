@@ -112,7 +112,7 @@ export default function conclusion () {
                     </Item>
                     <Item name="button" style={{ display: "flex", gap: "1rem" }}>
                         <Link href="/galery">
-                            <Button>Accéder à la gallerie</Button>
+                            <Button>Accéder à la galerie</Button>
                         </Link>
                         <Link href="/">
                             <Button layout="secondary">

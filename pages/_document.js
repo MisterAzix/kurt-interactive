@@ -4,11 +4,6 @@ export default function Document() {
     return (
         <Html lang="fr">
             <Head>
-                <meta
-                    name="description"
-                    content="Kurt Interactive is a narrative and interactive experience where you play as Kurt, a 6 year old child who wants to create."
-                />
-
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="kurt-interactive.vercel.app/" />
                 <meta property="og:title" content="Kurt" />
