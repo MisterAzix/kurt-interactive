@@ -244,8 +244,7 @@ const Board = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
-    /* border: 2px #1a1a1a solid;
-    border-radius: 4px; */
+    overflow: hidden;
 
     div {
         position: absolute;
