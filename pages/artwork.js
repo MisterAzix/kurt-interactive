@@ -13,6 +13,11 @@ import Header from "../components/Header";
 import PostIt from "../components/PostIt";
 import Button from "../components/Button";
 import DrawingSelector from "../components/DrawingSelector";
+import Tube from "../drawings/Tube";
+import Tube2 from "../drawings/Tube2";
+import Scheme from "../drawings/Scheme";
+import Pencil2 from "../drawings/Pencil2";
+import Brush2 from "../drawings/Brush2";
 
 const Artwork = () => {
     const [artworkState, setArtworkState] = useState(0);
@@ -115,6 +120,11 @@ const Artwork = () => {
                             <Button onClick={handleStart}>Je crée mon oeuvre</Button>
                         </Item>
                     </Grid>
+                    <Tube2 top="-5" left="25" />
+                    <Scheme top="20" right="-10" />
+                    <Pencil2 bottom="30" right="10" />
+                    <Tube bottom="0" right="0" />
+                    <Brush2 bottom="3" left="0" />
                 </Container>
             );
     }
