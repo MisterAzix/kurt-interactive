@@ -12,6 +12,7 @@ import Pen from "../drawings/Pen"
 import Pencil from "../drawings/Pencil"
 import Brush from "../drawings/Brush"
 import Tube from "../drawings/Tube"
+import { Player } from "@lottiefiles/react-lottie-player"
 
 export default function conclusion () {
     const [slide, setSlide] = useState(1)
@@ -28,7 +29,8 @@ export default function conclusion () {
                         <Header/>
                     </Item>
                     <Item name="illustration">
-                        <Illustration src="/illustrations/director.png"/>
+                        <Player src={require("../lib/lotties/director.json")} autoplay keepLastFrame
+                                style={{ height: "26rem" }}/>
                     </Item>
                     <Item name="postit">
                         <PostIt>Une dame s’approche de toi !
