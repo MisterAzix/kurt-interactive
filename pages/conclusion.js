@@ -49,7 +49,8 @@ export default function conclusion () {
                         <Header/>
                     </Item>
                     <Item name="illustration">
-                        <Illustration src="/illustrations/mother_looking_draw.png"/>
+                        <Player src={require("../lib/lotties/mother_no_happy.json")} autoplay keepLastFrame
+                                style={{ height: "26rem" }}/>
                     </Item>
                     <Item name="postit">
                         <PostIt>Ta maman vous rejoint. Elle aussi regarde ton dessin. Elle est intriguée.</PostIt>
@@ -66,7 +67,8 @@ export default function conclusion () {
                         <Header style={{ marginBottom: "1rem" }}/>
                     </Item>
                     <Item name="illustration">
-                        <Illustration src="/illustrations/mother&director.png"/>
+                        <Player src={require("../lib/lotties/mother&director.json")} autoplay keepLastFrame
+                                style={{ height: "26rem" }}/>
                     </Item>
                     <Item name="postit">
                         <PostIt>La directrice du musée parle à ta mère.</PostIt>
@@ -89,7 +91,8 @@ export default function conclusion () {
                         <Header/>
                     </Item>
                     <Item name="illustration">
-                        <Illustration src="/illustrations/mother_laughing.png"/>
+                        <Player src={require("../lib/lotties/mother_happy.json")} autoplay keepLastFrame
+                                style={{ height: "26rem" }}/>
                     </Item>
                     <Item name="postit">
                         <PostIt>Je n’avais pas vu cela sous cet angle ! <br/>
@@ -131,10 +134,6 @@ export default function conclusion () {
             </Container>
     }
 }
-
-const Illustration = styled.img`
-    height: 24rem;
-  `
 
 const Grid = styled.div`
     display: grid;
