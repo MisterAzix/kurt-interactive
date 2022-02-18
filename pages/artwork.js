@@ -92,7 +92,7 @@ const Artwork = () => {
                             <Header />
                         </Item>
                         <Item name="postit">
-                            <PostIt>Fais glisser les éléments sur la feuille pour créer ton œuvre.</PostIt>
+                            <PostIt>Clique sur les éléments et positionne les sur la feuille pour créer ton œuvre</PostIt>
                         </Item>
                         <Item name="board">
                             <BoardContainer>

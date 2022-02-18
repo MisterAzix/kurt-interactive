@@ -27,6 +27,7 @@ const PaintItemElement = styled.div`
     background-color: white;
     animation: fadeIn 1s infinite alternate;
     animation-delay: ${(props) => props.opacity}s;
+    cursor: pointer;
 
     @keyframes fadeIn {
         from {

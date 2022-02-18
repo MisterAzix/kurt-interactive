@@ -12,6 +12,7 @@ import Pen from "../drawings/Pen"
 import Pencil from "../drawings/Pencil"
 import Brush from "../drawings/Brush"
 import Tube from "../drawings/Tube"
+import { Player } from "@lottiefiles/react-lottie-player"
 
 export default function conclusion () {
     const [slide, setSlide] = useState(1)
@@ -28,7 +29,8 @@ export default function conclusion () {
                         <Header/>
                     </Item>
                     <Item name="illustration">
-                        <Illustration src="/illustrations/director.png"/>
+                        <Player src={require("../lib/lotties/director.json")} autoplay keepLastFrame
+                                style={{ height: "26rem" }}/>
                     </Item>
                     <Item name="postit">
                         <PostIt>Une dame s’approche de toi !
@@ -47,7 +49,8 @@ export default function conclusion () {
                         <Header/>
                     </Item>
                     <Item name="illustration">
-                        <Illustration src="/illustrations/mother_looking_draw.png"/>
+                        <Player src={require("../lib/lotties/mother_no_happy.json")} autoplay keepLastFrame
+                                style={{ height: "26rem" }}/>
                     </Item>
                     <Item name="postit">
                         <PostIt>Ta maman vous rejoint. Elle aussi regarde ton dessin. Elle est intriguée.</PostIt>
@@ -64,7 +67,8 @@ export default function conclusion () {
                         <Header style={{ marginBottom: "1rem" }}/>
                     </Item>
                     <Item name="illustration">
-                        <Illustration src="/illustrations/mother&director.png"/>
+                        <Player src={require("../lib/lotties/mother&director.json")} autoplay keepLastFrame
+                                style={{ height: "26rem" }}/>
                     </Item>
                     <Item name="postit">
                         <PostIt>La directrice du musée parle à ta mère.</PostIt>
@@ -87,7 +91,8 @@ export default function conclusion () {
                         <Header/>
                     </Item>
                     <Item name="illustration">
-                        <Illustration src="/illustrations/mother_laughing.png"/>
+                        <Player src={require("../lib/lotties/mother_happy.json")} autoplay keepLastFrame
+                                style={{ height: "26rem" }}/>
                     </Item>
                     <Item name="postit">
                         <PostIt>Je n’avais pas vu cela sous cet angle ! <br/>
@@ -129,10 +134,6 @@ export default function conclusion () {
             </Container>
     }
 }
-
-const Illustration = styled.img`
-    height: 24rem;
-  `
 
 const Grid = styled.div`
     display: grid;

@@ -49,7 +49,7 @@ const Introduction = () => {
                         <Item name="illustration">
 
                             <Player src={require("../lib/lotties/mother.json")} autoplay keepLastFrame style={{
-                                height: "24rem"
+                                height: "32rem"
                             }}/>
                         </Item>
                         <Item name="dialog">
@@ -100,7 +100,10 @@ const Introduction = () => {
                             <Header/>
                         </Item>
                         <Item name="illustration">
-                            <Illustration width={90} src="/illustrations/museum_interior.png" alt=""/>
+                            <Player src={require("../lib/lotties/museum_interior.json")} autoplay keepLastFrame style={{
+                                height: "32rem",
+                                margin: "-80px 0"
+                            }}/>
                         </Item>
                         <Item name="postit">
                             <PostIt>
@@ -124,7 +127,9 @@ const Introduction = () => {
                             <Header/>
                         </Item>
                         <Item name="illustration">
-                            <Illustration src="/illustrations/museum_front.png" alt=""/>
+                            <Player src={require("../lib/lotties/museum.json")} autoplay keepLastFrame style={{
+                                height: "24rem"
+                            }}/>
                             <PostItContainer>
                                 <PostIt>
                                     Hello Kurt, aujourd’hui ta maman t’emmène visiter le Musée des beaux arts de
