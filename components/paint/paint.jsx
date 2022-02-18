@@ -16,6 +16,7 @@ import Arrow from "../../drawings/Arrow"
 
 export default function Paint (props) {
     const [isPressed, setIsPressed] = useState(false)
+    const [isScrolling, setIsScrolling] = useState(false)
     const [paintItem, setPaintItem] = useState(props.paintItem)
     const { inventory, setInventory } = useInventoryContext([])
 
@@ -41,8 +42,8 @@ export default function Paint (props) {
                 <Item name="postit">
                     <PostIt> {props.href === "/artwork" ? "Tu connais la chanson! À toi de jouer!" : "Clique sur les éléments du tableau pour les mettre dans ton inventaire."} </PostIt>
                 </Item>
-                    {/*<Arrow top={50} right={0}/>*/}
-                <PaintImgArea>
+                {isScrolling ? "" : <Arrow top={30} right={1}/>}
+                <PaintImgArea onScroll={() => setIsScrolling(true)}>
                     <PaintImgContainer>
                         <PaintImg src={`/paints/${props.filename}`}/>
                         {paintItem.map((item) => {
