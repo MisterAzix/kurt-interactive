@@ -19,6 +19,30 @@ const Credits = () => {
                     name="description"
                     content="Kurt Interactive est un projet étudiant réalisé dans le cadre du projet Narration Interactive de la formation MMI Bordeaux en partenariat avec le musée des Beaux-Arts de Bordeaux. Découvrez l’équipe ayant travaillé sur cette expérience."
                 />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="kurt-interactive.vercel.app/credits" />
+                <meta property="og:title" content="Kurt - Crédits" />
+                <meta
+                    property="og:description"
+                    content="Kurt Interactive est un projet étudiant réalisé dans le cadre du projet Narration Interactive de la formation MMI Bordeaux en partenariat avec le musée des Beaux-Arts de Bordeaux. Découvrez l’équipe ayant travaillé sur cette expérience."
+                />
+                <meta
+                    property="og:image"
+                    content="https://res.cloudinary.com/hf10ee93o/image/upload/v1645299203/Meta_image_-_Cr%C3%A9dits_jdfrpa.jpg"
+                />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="kurt-interactive.vercel.app/credits" />
+                <meta property="twitter:title" content="Kurt - Crédits" />
+                <meta
+                    property="twitter:description"
+                    content="Kurt Interactive est un projet étudiant réalisé dans le cadre du projet Narration Interactive de la formation MMI Bordeaux en partenariat avec le musée des Beaux-Arts de Bordeaux. Découvrez l’équipe ayant travaillé sur cette expérience."
+                />
+                <meta
+                    property="twitter:image"
+                    content="https://res.cloudinary.com/hf10ee93o/image/upload/v1645299203/Meta_image_-_Cr%C3%A9dits_jdfrpa.jpg"
+                />
             </Head>
             <Container>
                 <Grid>
