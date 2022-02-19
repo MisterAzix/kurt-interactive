@@ -14,10 +14,10 @@ const Credits = () => {
     return (
         <>
             <Head>
-                <title>Kurt - Credits</title>
+                <title>Kurt - Crédits</title>
                 <meta
                     name="description"
-                    content="Kurt Interactive is a narrative and interactive experience where you play as Kurt, a 6 year old child who wants to create."
+                    content="Kurt Interactive est un projet étudiant réalisé dans le cadre du projet Narration Interactive de la formation MMI Bordeaux en partenariat avec le musée des Beaux-Arts de Bordeaux. Découvrez l’équipe ayant travaillé sur cette expérience."
                 />
             </Head>
             <Container>

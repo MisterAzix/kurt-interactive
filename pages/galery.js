@@ -24,10 +24,10 @@ const Galery = () => {
     return (
         <>
             <Head>
-                <title>Kurt - Galery</title>
+                <title>Kurt - Galerie</title>
                 <meta
                     name="description"
-                    content="Kurt Interactive is a narrative and interactive experience where you play as Kurt, a 6 year old child who wants to create."
+                    content="Retrouvez les oeuvres de toutes les personnes ayant participées à l’aventure Kurt Interactive."
                 />
             </Head>
             <Container>

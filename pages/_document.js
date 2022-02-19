@@ -9,7 +9,7 @@ export default function Document() {
                 <meta property="og:title" content="Kurt" />
                 <meta
                     property="og:description"
-                    content="Kurt Interactive is a narrative and interactive experience where you play as Kurt, a 6 year old child who wants to create."
+                    content="Kurt Interactive est une expérience narrative et interactive dans laquelle vous incarnez Kurt, un enfant de 6 ans qui veut créer et devenir un artiste, mais sa mère ne voit pas les choses comme ça et lui dit que cela demande beaucoup de connaissances et d'être une bonne personne."
                 />
                 <meta
                     property="og:image"
@@ -21,7 +21,7 @@ export default function Document() {
                 <meta property="twitter:title" content="Kurt" />
                 <meta
                     property="twitter:description"
-                    content="Kurt Interactive is a narrative and interactive experience where you play as Kurt, a 6 year old child who wants to create."
+                    content="Kurt Interactive est une expérience narrative et interactive dans laquelle vous incarnez Kurt, un enfant de 6 ans qui veut créer et devenir un artiste, mais sa mère ne voit pas les choses comme ça et lui dit que cela demande beaucoup de connaissances et d'être une bonne personne."
                 />
                 <meta
                     property="twitter:image"
