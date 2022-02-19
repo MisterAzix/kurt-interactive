@@ -1,4 +1,4 @@
-![](https://res.cloudinary.com/hf10ee93o/image/upload/v1645307367/Kurt_banner_ezzt4c.jpg)
+![](https://res.cloudinary.com/hf10ee93o/image/upload/v1644720660/Meta_image_evc8hd.jpg)
 
 # Kurt Interactive
 
@@ -13,4 +13,5 @@ You can play here : https://kurt--interactive.vercel.app/
 ## Copyrights ©
 
 Maxence BREUILLES ([@MisterAzix](https://github.com/MisterAzix))
+
 Clément RENOU ([@FlanB](https://github.com/FlanB))
