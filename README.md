@@ -12,6 +12,5 @@ You can play here : https://kurt--interactive.vercel.app/
 
 ## Copyrights ©
 
-Maxence BREUILLES ([@MisterAzix](https://github.com/MisterAzix))
-
+Maxence BREUILLES ([@MisterAzix](https://github.com/MisterAzix))<br />
 Clément RENOU ([@FlanB](https://github.com/FlanB))
