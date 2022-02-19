@@ -29,3 +29,12 @@ yarn create next-app --example with-emotion with-emotion-app
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+## Play 🎮
+
+You can play here : https://kurt--interactive.vercel.app/
+
+## Copyrights ©
+
+Maxence BREUILLES ([@MisterAzix](https://github.com/MisterAzix))
+Clément RENOU ([@FlanB](https://github.com/FlanB))

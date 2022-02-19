@@ -24,10 +24,34 @@ const Galery = () => {
     return (
         <>
             <Head>
-                <title>Kurt - Galery</title>
+                <title>Kurt - Galerie</title>
                 <meta
                     name="description"
-                    content="Kurt Interactive is a narrative and interactive experience where you play as Kurt, a 6 year old child who wants to create."
+                    content="Retrouvez les oeuvres de toutes les personnes ayant participées à l’aventure Kurt Interactive."
+                />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="kurt-interactive.vercel.app/galery" />
+                <meta property="og:title" content="Kurt - Galerie" />
+                <meta
+                    property="og:description"
+                    content="Retrouvez les oeuvres de toutes les personnes ayant participées à l’aventure Kurt Interactive."
+                />
+                <meta
+                    property="og:image"
+                    content="https://res.cloudinary.com/hf10ee93o/image/upload/v1645299205/Meta_image_-_Galerie_zcoorm.jpg"
+                />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="kurt-interactive.vercel.app/galery" />
+                <meta property="twitter:title" content="Kurt - Galerie" />
+                <meta
+                    property="twitter:description"
+                    content="Retrouvez les oeuvres de toutes les personnes ayant participées à l’aventure Kurt Interactive."
+                />
+                <meta
+                    property="twitter:image"
+                    content="https://res.cloudinary.com/hf10ee93o/image/upload/v1645299205/Meta_image_-_Galerie_zcoorm.jpg"
                 />
             </Head>
             <Container>
