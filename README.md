@@ -1,34 +1,10 @@
-# Emotion Example
+![](https://res.cloudinary.com/hf10ee93o/image/upload/v1645307367/Kurt_banner_ezzt4c.jpg)
 
-Extract and inline critical css with
-[@emotion/css](https://github.com/emotion-js/emotion/tree/master/packages/css),
-[@emotion/server](https://github.com/emotion-js/emotion/tree/master/packages/server),
-[@emotion/react](https://github.com/emotion-js/emotion/tree/master/packages/react),
-and [@emotion/styled](https://github.com/emotion-js/emotion/tree/master/packages/styled).
+# Kurt Interactive
 
-## Preview
+Kurt is a 6 year old child who lives in Bordeaux with his mother. One day on his way home from school, his mother, Judith, takes him to the Bordeaux Museum of Fine Arts. Kurt was captivated by the paintings and sculptures he saw and was inspired to do the same. 
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-emotion)
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-emotion&project-name=with-emotion&repository-name=with-emotion)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
-
-```bash
-npx create-next-app --example with-emotion with-emotion-app
-# or
-yarn create next-app --example with-emotion with-emotion-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+He will wander through the museum and be inspired by the wonderful paintings he sees to create his own work.
 
 ## Play 🎮
 
