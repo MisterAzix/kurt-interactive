@@ -10,6 +10,21 @@ He will wander through the museum and be inspired by the wonderful paintings he 
 
 You can play here : https://kurt--interactive.vercel.app/
 
+## Tree Structure 🌳
+
+```mermaid
+graph TD
+ A{Home} --> B[Crédits] 
+    A --> C[Introduction]
+    C --> D[Paint 1]
+    D --> E[Paint 2]
+    E --> F[Paint 3]
+    F --> G[Artwork]
+    G --> H[Conclusion]
+    H --> I[Galery]
+    H --> A
+```
+
 ## Copyrights ©
 
 Maxence BREUILLES ([@MisterAzix](https://github.com/MisterAzix))<br />
