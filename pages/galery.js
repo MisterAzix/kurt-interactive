@@ -17,8 +17,10 @@ const Galery = () => {
     const fetchArtwork = async () => {
         let res = await fetch("/api/artwork");
         let json = await res.json();
+        let newJson = json.reverse();
+        /* newJson.length = 14; */
 
-        setArtworks(json);
+        setArtworks(newJson);
     };
 
     return (
@@ -57,7 +59,7 @@ const Galery = () => {
             <Container>
                 <Title>Galerie</Title>
                 <GaleryContainer>
-                    {artworks.reverse().map((artwork, key) => (
+                    {artworks.map((artwork, key) => (
                         <div key={key}>
                             <img width="256px" src={artwork.image_link} alt="" />
                         </div>
@@ -72,9 +74,10 @@ export default Galery;
 
 const Container = styled.div`
     position: relative;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     /* background: center / cover no-repeat url("/paper_texture_background.png"), #fefef2; */
     background-color: #fefef2;
 `;
