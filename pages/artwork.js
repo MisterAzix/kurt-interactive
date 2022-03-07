@@ -31,6 +31,8 @@ const Artwork = () => {
 
     const containerRef = useRef();
     const containerFinalRef = useRef();
+    const colorSelectorRef = useRef([]);
+    const selectedDrawingRef = useRef();
 
     const handleStart = () => {
         setArtworkState(artworkState + 1);
@@ -49,16 +51,19 @@ const Artwork = () => {
         setBoard([...board, { src: inventory[e.target.id], color: selectedColor }]);
         setInventory((prevState) => prevState.filter((_, i) => i != e.target.id));
         handleSelectDrawing(board.length);
+        selectedDrawingRef.current = e.target;
     };
 
     const handleSelectColor = (e) => {
         setSelectedColor(colors[e.target.id]);
-        selectedDrawing !== null &&
+        if (selectedDrawing !== null) {
             setBoard(
                 board.map((item, key) =>
                     key === selectedDrawing ? { src: item.src, color: colors[e.target.id] } : item
                 )
             );
+            selectedDrawingRef.current && selectedDrawingRef.current.focus();
+        }
     };
 
     const handleSelectDrawing = (index) => {
@@ -67,8 +72,12 @@ const Artwork = () => {
 
     const handleBlur = (e) => {
         e.preventDefault();
+        selectedDrawingRef.current = e.target;
 
-    }
+        if (!colorSelectorRef.current.includes(e.relatedTarget)) {
+            handleSelectDrawing(null);
+        }
+    };
 
     switch (artworkState) {
         case 2:
@@ -124,9 +133,10 @@ const Artwork = () => {
                                 <Board ref={containerRef}>
                                     {board.map((item, key) => (
                                         <Drawing
-                                            onMouseDown={() => handleSelectDrawing(key)}
-                                            onTouchStart={() => handleSelectDrawing(key)}
+                                            onFocus={() => handleSelectDrawing(key)}
+                                            onBlur={handleBlur}
                                             selected={selectedDrawing === key}
+                                            tabIndex="0"
                                             color={item.color}
                                             scale="6"
                                             key={key}
@@ -176,7 +186,13 @@ const Artwork = () => {
                             </InventoryContainer>
                             <ColorSelector>
                                 {colors.map((color, key) => (
-                                    <ColorContainer onClick={handleSelectColor} id={key} key={key}>
+                                    <ColorContainer
+                                        onClick={handleSelectColor}
+                                        tabIndex="0"
+                                        id={key}
+                                        key={key}
+                                        ref={(el) => (colorSelectorRef.current[key] = el)}
+                                    >
                                         <svg
                                             width="46"
                                             height="42"
