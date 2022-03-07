@@ -79,7 +79,8 @@ const Container = styled.div`
     overflow-x: hidden;
     overflow-y: auto;
     /* background: center / cover no-repeat url("/paper_texture_background.png"), #fefef2; */
-    background-color: #fefef2;
+    /* background-color: #fefef2; */
+    background-color: #1a1a1a;
 `;
 
 const GaleryContainer = styled.ul`
