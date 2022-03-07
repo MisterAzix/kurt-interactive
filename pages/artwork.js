@@ -20,12 +20,19 @@ import Scheme from "../drawings/Scheme";
 import Pencil2 from "../drawings/Pencil2";
 import Brush2 from "../drawings/Brush2";
 
+const colors = ["#000000", "#EBB880", "#C7ACC8", "#47AC42", "#82BDD0"];
+
 const Artwork = () => {
-    const [artworkState, setArtworkState] = useState(0);
+    const [artworkState, setArtworkState] = useState(1);
     const { inventory, setInventory } = useInventoryContext([]);
     const [board, setBoard] = useState([]);
+    const [selectedColor, setSelectedColor] = useState(colors[0]);
+    const [selectedDrawing, setSelectedDrawing] = useState(null);
+
     const containerRef = useRef();
     const containerFinalRef = useRef();
+    const colorSelectorRef = useRef([]);
+    const selectedDrawingRef = useRef();
 
     const handleStart = () => {
         setArtworkState(artworkState + 1);
@@ -41,10 +48,35 @@ const Artwork = () => {
     };
 
     const handleUse = (e) => {
-        console.log(e.target);
-
-        setBoard([...board, inventory[e.target.id]]);
+        setBoard([...board, { src: inventory[e.target.id], color: selectedColor }]);
         setInventory((prevState) => prevState.filter((_, i) => i != e.target.id));
+        handleSelectDrawing(board.length);
+        selectedDrawingRef.current = e.target;
+    };
+
+    const handleSelectColor = (e) => {
+        setSelectedColor(colors[e.target.id]);
+        if (selectedDrawing !== null) {
+            setBoard(
+                board.map((item, key) =>
+                    key === selectedDrawing ? { src: item.src, color: colors[e.target.id] } : item
+                )
+            );
+            selectedDrawingRef.current && selectedDrawingRef.current.focus();
+        }
+    };
+
+    const handleSelectDrawing = (index) => {
+        setSelectedDrawing(index);
+    };
+
+    const handleBlur = (e) => {
+        e.preventDefault();
+        selectedDrawingRef.current = e.target;
+
+        if (!colorSelectorRef.current.includes(e.relatedTarget)) {
+            handleSelectDrawing(null);
+        }
     };
 
     switch (artworkState) {
@@ -92,20 +124,27 @@ const Artwork = () => {
                             <Header />
                         </Item>
                         <Item name="postit">
-                            <PostIt>Clique sur les éléments et positionne les sur la feuille pour créer ton œuvre</PostIt>
+                            <PostIt>
+                                Clique sur les éléments et positionne les sur la feuille pour créer ton œuvre
+                            </PostIt>
                         </Item>
                         <Item name="board">
                             <BoardContainer>
                                 <Board ref={containerRef}>
                                     {board.map((item, key) => (
                                         <Drawing
+                                            onFocus={() => handleSelectDrawing(key)}
+                                            onBlur={handleBlur}
+                                            selected={selectedDrawing === key}
+                                            tabIndex="0"
+                                            color={item.color}
                                             scale="6"
                                             key={key}
                                             drag
                                             dragConstraints={containerRef}
                                             dragMomentum={false}
                                         >
-                                            <DrawingSelector drawing={item} />
+                                            <DrawingSelector drawing={item.src} />
                                         </Drawing>
                                     ))}
                                 </Board>
@@ -126,7 +165,7 @@ const Artwork = () => {
                             <InventoryContainer>
                                 <Inventory>
                                     {inventory.map((item, key) => (
-                                        <Drawing scale="4" onClick={handleUse} id={key} key={key}>
+                                        <Drawing color={selectedColor} scale="4" onClick={handleUse} id={key} key={key}>
                                             <DrawingSelector drawing={item} />
                                         </Drawing>
                                     ))}
@@ -145,6 +184,39 @@ const Artwork = () => {
                                     />
                                 </svg>
                             </InventoryContainer>
+                            <ColorSelector>
+                                {colors.map((color, key) => (
+                                    <ColorContainer
+                                        onClick={handleSelectColor}
+                                        tabIndex="0"
+                                        id={key}
+                                        key={key}
+                                        ref={(el) => (colorSelectorRef.current[key] = el)}
+                                    >
+                                        <svg
+                                            width="46"
+                                            height="42"
+                                            viewBox="0 0 46 42"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            preserveAspectRatio="none"
+                                        >
+                                            <path
+                                                d="M12.3636 11.2864C16.463 9.54693 20.6794 7.32588 25.0409 6.265C27.0663 5.77232 21.3187 8.14396 19.4341 9.03462C14.7923 11.2282 9.99947 13.1198 5.15809 14.8216C4.65983 14.9967 4.15881 15.1639 3.66069 15.3395C3.29445 15.4685 2.40254 15.4616 2.59112 15.8011C2.64296 15.8944 2.79971 15.8618 2.90636 15.8574C3.86651 15.8176 6.01456 15.4908 6.68927 15.3845C14.5109 14.1525 22.2795 12.5489 29.9722 10.6784C32.2615 10.1217 34.5661 9.57596 36.8399 8.95581C36.9396 8.92865 37.2358 8.8498 37.1327 8.85449C36.8027 8.86949 35.5037 9.29216 35.4664 9.30483C26.9815 12.1908 18.6957 15.3753 9.95428 17.4786C7.66705 18.0289 5.36254 18.4684 3.04146 18.8409C2.83861 18.8735 2.63578 18.9063 2.4335 18.9422C2.16379 18.9902 2.97508 18.8587 3.24412 18.8071C10.7935 17.3608 18.2749 15.485 25.6714 13.403C28.5031 12.6059 31.3064 11.712 34.1379 10.9148C34.4788 10.8188 35.4904 10.52 35.1737 10.6784C33.1854 11.6725 30.7362 12.2746 28.6436 12.9752C22.5982 14.999 16.427 16.5793 10.3146 18.3793C6.75765 19.4267 9.85966 18.8548 11.3729 18.4919C18.8558 16.6974 26.2345 14.5244 33.8226 13.1778C41.1442 11.8785 19.61 17.557 12.4987 19.7303C10.9936 20.1903 9.49076 20.6585 7.99527 21.1489C7.08126 21.4487 4.37641 22.288 5.33823 22.2748C8.70755 22.2286 12.5382 20.8588 15.7863 20.1807C20.4455 19.208 25.1072 18.3509 29.8145 17.6475C31.8474 17.3437 34.4347 16.6807 36.5472 16.6455C36.6798 16.6433 36.3099 16.7646 36.1869 16.8144C32 18.5069 37.5353 16.1619 30.7828 18.9873C26.0508 20.9673 21.1428 22.9126 16.732 25.5623C14.8972 26.6645 13.1555 28.4091 16.7545 27.8141C21.4231 27.0422 25.9649 24.996 30.2874 23.1755C33.6744 21.749 36.989 20.1592 40.3639 18.7058C40.8255 18.507 42.2371 17.9905 41.7487 18.1091C36.541 19.3738 31.4683 21.2514 26.2793 22.6126C20.9435 24.0123 15.1029 24.9516 10.0894 27.3637C7.86988 28.4316 15.0341 27.4677 17.4751 27.1385C22.197 26.5018 26.9015 25.7311 31.6272 25.1232C33.5743 24.8728 34.2392 24.8483 32.2689 25.855C30.8148 26.5981 17.9023 31.4214 18.8486 33.4209C19.5828 34.9721 24.9701 33.4226 25.57 33.2858C29.0554 32.4907 32.4622 31.3553 35.8492 30.2234C36.3726 30.0485 36.8939 29.8672 37.4141 29.683C37.6145 29.612 37.8224 29.5562 38.0108 29.4578C38.1141 29.4039 37.784 29.5122 37.6731 29.5479C35.8606 30.1316 34.0857 30.9136 32.3815 31.7546C30.3291 32.7674 27.4115 33.9606 25.9641 35.864C24.6674 37.5692 27.8673 37.4595 28.5085 37.4064C32.3714 37.0869 43.308 32.7985 39.5645 33.8037C35.9945 34.7623 32.3251 36.9827 29.4543 39.2754C29.0074 39.6322 27.255 41.0229 28.9589 40.4012C32.0012 39.2912 34.8776 37.5445 37.4254 35.56C37.6249 35.4046 39.0515 34.4535 38.8215 33.905C38.5046 33.1494 36.3035 33.1712 35.8492 33.1507C29.6628 32.8703 23.3464 33.917 17.2724 34.952C15.3272 35.2835 13.3869 35.6409 11.4404 35.9653C11.2156 36.0028 10.5712 36.0959 10.7874 36.168C11.0296 36.2487 11.9816 35.6943 12.0034 35.6839C14.2308 34.6208 16.4735 33.615 18.7585 32.6778C26.3217 29.5758 34.0881 27.0243 41.6812 24.0086C45.4043 22.53 40.6602 23.1702 39.3844 23.2656C31.5225 23.8532 23.8262 24.8292 16.1916 26.8233C15.4669 27.0126 13.5674 27.2988 12.9266 27.9717C12.766 28.1403 13.3512 28.2647 13.5796 28.2194C15.6149 27.8152 17.6365 26.9367 19.5579 26.2153C23.5867 24.7029 27.6088 23.1838 31.661 21.7344C33.4488 21.0949 36.861 20.4359 38.4049 19.0773C39.1569 18.4155 36.4668 18.3942 35.4664 18.4469C27.7075 18.8552 19.7956 20.7237 12.251 22.5C11.0351 22.7863 9.60859 23.0556 8.46813 23.6258C7.67221 24.0238 8.62182 24.0553 8.96352 24.0311C14.2356 23.6587 19.3888 21.0371 24.4329 19.6628C27.4651 18.8366 30.5221 18.2046 33.62 17.6925C35.9165 17.3129 29.0794 18.7213 26.8197 19.28C19.3429 21.1286 11.864 23.0821 4.53887 25.4723C-4.7598 28.5063 7.1423 26.0131 7.70255 25.9001C17.043 24.0156 26.384 21.9614 35.6353 19.674C39.7077 18.6671 36.1462 19.0992 35.2412 19.1674C28.5416 19.6723 21.6195 21.1325 15.2233 23.1755C14.5885 23.3783 13.086 23.5554 13.4557 24.11C13.5664 24.276 14.1425 24.0964 14.2551 24.0537C15.3455 23.6396 16.4436 22.7692 17.385 22.151C19.9681 20.4544 22.5408 18.7472 25.1535 17.0958C27.9373 15.3362 30.866 13.7014 33.4511 11.6466C34.202 11.0498 35.641 9.8848 35.8041 8.76442C36.0298 7.21491 29.3355 7.30418 28.5536 7.27827C26.4456 7.20843 20.117 7.23324 22.2262 7.23324C24.7713 7.23324 27.341 7.12718 29.8821 7.27827C34.17 7.53323 21.3593 8.36018 17.0923 8.85449C15.1936 9.07443 13.3148 9.48015 11.4179 9.68763C11.2687 9.70395 10.9835 9.83689 10.9676 9.68763C10.949 9.51448 11.2343 9.4611 11.3841 9.37238C11.806 9.12258 12.2417 8.89639 12.6789 8.67435C17.347 6.30325 22.1192 4.64524 27.135 3.20264C28.7878 2.72728 28.199 2.73652 27.0224 2.86488C24.1299 3.18043 21.161 3.40093 18.3307 4.10334C18.1556 4.1468 17.9822 4.19884 17.8128 4.26096C17.4251 4.40312 17.8386 4.3566 17.9817 4.33977C19.1931 4.19725 20.3947 3.92761 21.5957 3.72054C21.9782 3.6546 22.3612 3.59216 22.7441 3.52914C23.1137 3.46832 23.8473 3.37545 22.958 3.45033C19.9619 3.70264 16.966 4.08449 14.0074 4.62123C11.4756 5.08053 8.78056 5.58388 6.39654 6.61401C5.30281 7.08661 6.32321 6.94833 6.66675 6.89548C8.23039 6.65492 9.772 6.35149 11.3503 6.21996"
+                                                stroke={color}
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                            />
+                                            <path
+                                                d="M19.2256 1C11.7525 7.46977 -7.54946 22.5775 5.62837 33.5271C10.8923 37.901 18.8024 38.2495 25.2578 39.3285C30.2452 40.1621 36.0646 41.0596 39.5472 36.403C44.3504 29.9807 46.8021 15.0067 39.6955 9.42929C34.2665 5.1685 24.212 1.89251 17.4456 1.89251"
+                                                stroke="black"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                            />
+                                        </svg>
+                                    </ColorContainer>
+                                ))}
+                            </ColorSelector>
                         </Item>
                         <Item name="button">
                             <Button onClick={handleEnd}>J’ai terminé</Button>
@@ -271,7 +343,6 @@ const InventoryContainer = styled.div`
 `;
 
 const Inventory = styled.div`
-    gap: 1rem;
     width: 100%;
     max-width: 100%;
     min-height: 4rem;
@@ -289,6 +360,14 @@ const Drawing = styled(motion.div)`
     display: inline-block;
     height: ${(props) => props.scale || 8}rem;
     width: ${(props) => props.scale || 8}rem;
+    cursor: pointer;
+
+    ${(props) =>
+        props.selected &&
+        css`
+            outline: 2px dashed;
+            outline-offset: 0.5rem;
+        `}
 
     svg {
         position: absolute;
@@ -296,6 +375,23 @@ const Drawing = styled(motion.div)`
         top: 0;
         max-height: 100%;
         max-width: 100%;
+        pointer-events: none;
+
+        path {
+            fill: ${(props) => props.color};
+        }
+    }
+`;
+
+const ColorSelector = styled.div`
+    display: flex;
+    gap: 1rem;
+`;
+
+const ColorContainer = styled.div`
+    cursor: pointer;
+
+    svg {
         pointer-events: none;
     }
 `;
