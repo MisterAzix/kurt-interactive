@@ -47,7 +47,7 @@ handler.post(/* upload.single('artworkImage'), */ async (req, res) => {
 
         let db = await connectToDatabase();
         await db.collection("artworks").insertOne({
-            username: "",
+            username: req.body.username || "",
             image_link: artworkImage,
         });
 

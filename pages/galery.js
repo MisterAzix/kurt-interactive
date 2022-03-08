@@ -62,6 +62,7 @@ const Galery = () => {
                     {artworks.map((artwork, key) => (
                         <div key={key}>
                             <img width="256px" src={artwork.image_link} alt="" />
+                            <ImgBanner><span>{artwork.username || "Anonyme"}</span><span>#{artworks.length-key}</span></ImgBanner>
                         </div>
                     ))}
                 </GaleryContainer>
@@ -93,4 +94,10 @@ const GaleryContainer = styled.ul`
 
 const Title = styled.h1`
     display: none;
+`;
+
+const ImgBanner = styled.div`
+    display: flex;
+    justify-content: space-between;
+    color: #fefef2;
 `;
