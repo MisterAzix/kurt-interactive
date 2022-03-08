@@ -53,9 +53,8 @@ const Artwork = () => {
     };
 
     const handleSubmit = () => {
-        axios
-            .post("/api/artwork", { username, image_url }, { onDownloadProgress: () => setLoading(true) })
-            .then(() => router.push("/conclusion"));
+        setLoading(true);
+        axios.post("/api/artwork", { username, image_url }).then(() => router.push("/conclusion"));
     };
 
     const handleUse = (e) => {

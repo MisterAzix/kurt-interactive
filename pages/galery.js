@@ -60,10 +60,10 @@ const Galery = () => {
                 <Title>Galerie</Title>
                 <GaleryContainer>
                     {artworks.map((artwork, key) => (
-                        <div key={key}>
+                        <li key={key}>
                             <img width="256px" src={artwork.image_link} alt="" />
                             <ImgBanner><span>{artwork.username || "Anonyme"}</span><span>#{artworks.length-key}</span></ImgBanner>
-                        </div>
+                        </li>
                     ))}
                 </GaleryContainer>
             </Container>
