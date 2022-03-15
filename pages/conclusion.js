@@ -69,9 +69,10 @@ export default function conclusion () {
                     <Item name="illustration">
                         <Player src={require("../lib/lotties/mother&director.json")} autoplay keepLastFrame
                                 style={{ height: "26rem" }}/>
-                    </Item>
-                    <Item name="postit">
-                        <PostIt>La directrice du musée parle à ta mère.</PostIt>
+                        <div style={{ position: "absolute", bottom: "32px" }}>
+                            <PostIt>La directrice du musée parle à ta
+                                mère.</PostIt>
+                        </div>
                     </Item>
                     <Item name="dialog">
                         <Dialog name="Directrice du Musée :">
@@ -92,7 +93,7 @@ export default function conclusion () {
                     </Item>
                     <Item name="illustration">
                         <Player src={require("../lib/lotties/mother_happy.json")} autoplay keepLastFrame
-                                style={{ height: "26rem" }}/>
+                        />
                     </Item>
                     <Item name="postit">
                         <PostIt>Je n’avais pas vu cela sous cet angle ! <br/>
@@ -145,11 +146,10 @@ const Grid = styled.div`
     switch (props.slide) {
         case "3":
             return css`
-                grid-template-rows: min-content 1fr min-content min-content 20vh;
+                grid-template-rows: min-content min-content min-content 20vh;
                 grid-template-areas:
                         "header"
                         "illustration"
-                        "postit"
                         "dialog"
                         "button";
                 img {
