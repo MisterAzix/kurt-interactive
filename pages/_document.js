@@ -1,11 +1,11 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import Script from "next/script";
+/* import Script from "next/script"; */
 
 export default function Document() {
     return (
         <Html lang="fr">
             <Head>
-                <Script
+                <script
                     dangerouslySetInnerHTML={{
                         __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -13,8 +13,8 @@ export default function Document() {
                         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
                         })(window,document,'script','dataLayer',${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});`,
                     }}
-                    strategy="worker"
-                ></Script>
+                    /* strategy="worker" */
+                ></script>
 
                 <link rel="shortcut icon" href="/favicon.ico" />
                 <link rel="stylesheet" href="https://use.typekit.net/axx7xmq.css" />
