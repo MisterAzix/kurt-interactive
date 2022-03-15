@@ -12,7 +12,7 @@ export default function Document() {
                         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
                         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-                        })(window,document,'script','dataLayer','GTM-WVR85XM');`,
+                        })(window,document,'script','dataLayer',${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS});`,
                     }}
                 ></Script>
 
@@ -22,8 +22,7 @@ export default function Document() {
             <body>
                 <noscript
                     dangerouslySetInnerHTML={{
-                        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVR85XM" 
-                        height="0" width="0" style="display:none;visibility:hidden" ></iframe>`,
+                        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
                     }}
                 ></noscript>
                 <Main />
