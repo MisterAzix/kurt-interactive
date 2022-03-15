@@ -6,6 +6,10 @@ export default function Document() {
         <Html lang="fr">
             <Head>
                 <script
+                    async
+                    src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+                />
+                <script
                     dangerouslySetInnerHTML={{
                         __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                         new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -20,11 +24,6 @@ export default function Document() {
                 <link rel="stylesheet" href="https://use.typekit.net/axx7xmq.css" />
             </Head>
             <body>
-                <noscript
-                    dangerouslySetInnerHTML={{
-                        __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-                    }}
-                ></noscript>
                 <Main />
                 <NextScript />
             </body>
