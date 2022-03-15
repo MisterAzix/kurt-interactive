@@ -1,6 +1,7 @@
 import { globalStyles } from "../shared/styles";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 import InventoryWrapper from "../lib/context";
 
