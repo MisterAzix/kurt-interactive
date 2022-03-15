@@ -79,7 +79,7 @@ const Container = styled.div`
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    /* background: center / cover no-repeat url("/paper_texture_background.png"), #fefef2; */
+    /* background: center / cover no-repeat url("/paper_texture_background.webp"), #fefef2; */
     /* background-color: #fefef2; */
     background-color: #1a1a1a;
 `;
