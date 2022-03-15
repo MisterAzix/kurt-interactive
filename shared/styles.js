@@ -48,5 +48,5 @@ export const Container = styled.div`
     width: 100vw;
     max-width: 420px;
     overflow: hidden;
-    background: right / cover no-repeat url("/paper_texture_background.png"), #fefef2;
+    background: right / cover no-repeat url("/paper_texture_background.webp"), #fefef2;
 `;
