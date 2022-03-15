@@ -17,26 +17,53 @@ const Galery = () => {
     const fetchArtwork = async () => {
         let res = await fetch("/api/artwork");
         let json = await res.json();
+        let newJson = json.reverse();
+        /* newJson.length = 14; */
 
-        setArtworks(json);
+        setArtworks(newJson);
     };
 
     return (
         <>
             <Head>
-                <title>Kurt - Galery</title>
+                <title>Kurt - Galerie</title>
                 <meta
                     name="description"
-                    content="Kurt Interactive is a narrative and interactive experience where you play as Kurt, a 6 year old child who wants to create."
+                    content="Retrouvez les oeuvres de toutes les personnes ayant participées à l’aventure Kurt Interactive."
+                />
+
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="kurt-interactive.vercel.app/galery" />
+                <meta property="og:title" content="Kurt - Galerie" />
+                <meta
+                    property="og:description"
+                    content="Retrouvez les oeuvres de toutes les personnes ayant participées à l’aventure Kurt Interactive."
+                />
+                <meta
+                    property="og:image"
+                    content="https://res.cloudinary.com/hf10ee93o/image/upload/v1645299205/Meta_image_-_Galerie_zcoorm.jpg"
+                />
+
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta property="twitter:url" content="kurt-interactive.vercel.app/galery" />
+                <meta property="twitter:title" content="Kurt - Galerie" />
+                <meta
+                    property="twitter:description"
+                    content="Retrouvez les oeuvres de toutes les personnes ayant participées à l’aventure Kurt Interactive."
+                />
+                <meta
+                    property="twitter:image"
+                    content="https://res.cloudinary.com/hf10ee93o/image/upload/v1645299205/Meta_image_-_Galerie_zcoorm.jpg"
                 />
             </Head>
             <Container>
                 <Title>Galerie</Title>
                 <GaleryContainer>
-                    {artworks.reverse().map((artwork, key) => (
-                        <div key={key}>
+                    {artworks.map((artwork, key) => (
+                        <li key={key}>
                             <img width="256px" src={artwork.image_link} alt="" />
-                        </div>
+                            <ImgBanner><span>{artwork.username || "Anonyme"}</span><span>#{artworks.length-key}</span></ImgBanner>
+                        </li>
                     ))}
                 </GaleryContainer>
             </Container>
@@ -48,11 +75,13 @@ export default Galery;
 
 const Container = styled.div`
     position: relative;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
     /* background: center / cover no-repeat url("/paper_texture_background.png"), #fefef2; */
-    background-color: #fefef2;
+    /* background-color: #fefef2; */
+    background-color: #1a1a1a;
 `;
 
 const GaleryContainer = styled.ul`
@@ -65,4 +94,10 @@ const GaleryContainer = styled.ul`
 
 const Title = styled.h1`
     display: none;
+`;
+
+const ImgBanner = styled.div`
+    display: flex;
+    justify-content: space-between;
+    color: #fefef2;
 `;

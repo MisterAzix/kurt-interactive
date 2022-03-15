@@ -16,7 +16,7 @@ export const globalStyles = (
                 box-sizing: border-box;
 
                 &::-webkit-scrollbar {
-                    background-color: transparent;
+                    background-color: #fefef2;
                     width: 0.6rem;
                     height: 0.6rem;
                 }

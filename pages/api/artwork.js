@@ -38,8 +38,8 @@ handler.post(/* upload.single('artworkImage'), */ async (req, res) => {
         if (req.body.image_url) {
             const image = await cloudinary.uploader.upload(req.body.image_url, {
                 folder: 'kurt_interactive',
-                width: 472,
-                height: 278,
+                /* width: 472,
+                height: 278, */
                 crop: "fill",
             });
             artworkImage = image.secure_url;
@@ -47,7 +47,7 @@ handler.post(/* upload.single('artworkImage'), */ async (req, res) => {
 
         let db = await connectToDatabase();
         await db.collection("artworks").insertOne({
-            username: "",
+            username: req.body.username || "",
             image_link: artworkImage,
         });
 
