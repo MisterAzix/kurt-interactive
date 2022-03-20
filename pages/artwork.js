@@ -437,7 +437,7 @@ const ColorContainer = styled.div`
 const InputContainer = styled.div`
     position: relative;
     width: 400px;
-    max-width: 80%;
+    max-width: 80vw;
 
     svg {
         position: absolute;
