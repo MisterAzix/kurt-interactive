@@ -28,6 +28,7 @@ const App = ({ Component, pageProps }) => {
                     name="description"
                     content="Kurt Interactive est une expérience narrative et interactive dans laquelle vous incarnez Kurt, un enfant de 6 ans qui veut créer et devenir un artiste, mais sa mère ne voit pas les choses comme ça et lui dit que cela demande beaucoup de connaissances et d'être une bonne personne."
                 />
+                <meta name="theme-color" content="#fefef2" />
 
                 {Component.name !== "Credits" && Component.name !== "Galery" && (
                     <>
