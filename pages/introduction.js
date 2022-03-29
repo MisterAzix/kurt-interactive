@@ -49,7 +49,7 @@ const Introduction = () => {
                         <Item name="illustration">
 
                             <Player src={require("../lib/lotties/mother.json")} autoplay keepLastFrame style={{
-                                height: "32rem"
+                                height: "24rem"
                             }}/>
                         </Item>
                         <Item name="dialog">
