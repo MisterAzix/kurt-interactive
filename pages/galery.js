@@ -156,7 +156,8 @@ const Container = styled.div`
     width: 100vw;
     padding: 2rem;
     overflow-x: hidden;
-    background: center / cover no-repeat url("/paper_texture_background.webp"), #fefef2;
+    /* background: center / cover no-repeat url("/paper_texture_background.webp"), #fefef2; */
+    background-color: #fefef2;
 `;
 
 const GaleryContainer = styled.div`
