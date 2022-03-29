@@ -74,7 +74,7 @@ const Credits = () => {
                                 </a>
                             </p>
                             <p>
-                                <a target="_blank" rel="noreferrer" href="https://alexandredupin.com/">
+                                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/alexandredupin/">
                                     Alexandre dupin
                                 </a>
                             </p>
@@ -111,12 +111,12 @@ const Credits = () => {
                         <CreditsContainer>
                             <h2>Développement</h2>
                             <p>
-                                <a target="_blank" rel="noreferrer" href="https://github.com/MisterAzix">
+                                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/maxence-breuilles/">
                                     Maxence Breuilles
                                 </a>
                             </p>
                             <p>
-                                <a target="_blank" rel="noreferrer" href="https://github.com/FlanB">
+                                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/clement-renou/">
                                     Clément renou
                                 </a>
                             </p>
