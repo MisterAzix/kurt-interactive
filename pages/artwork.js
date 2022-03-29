@@ -126,6 +126,7 @@ const Artwork = () => {
                                     onChange={handleInputChange}
                                     value={username}
                                     placeholder="Quel est ton nom d'artiste ?"
+                                    maxLength="32"
                                 />
                                 <svg
                                     width="337"
