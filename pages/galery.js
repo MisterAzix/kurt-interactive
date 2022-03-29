@@ -283,6 +283,7 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
     text-align: center;
+    font-size: 2rem;
     margin: 0;
 `;
 
