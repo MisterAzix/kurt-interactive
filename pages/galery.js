@@ -28,7 +28,6 @@ const Galery = () => {
         let res = await fetch("/api/artwork");
         let json = await res.json();
         let newJson = json.reverse();
-        /* newJson.length = 14; */
 
         setArtworks(newJson);
     };
@@ -157,10 +156,7 @@ const Container = styled.div`
     width: 100vw;
     padding: 2rem;
     overflow-x: hidden;
-    /* overflow-y: auto; */
     background: center / cover no-repeat url("/paper_texture_background.webp"), #fefef2;
-    /* background-color: #fefef2; */
-    /* background-color: #1a1a1a; */
 `;
 
 const GaleryContainer = styled.div`
@@ -218,8 +214,6 @@ const Podium = styled.div`
 
 const ImgPodium = styled.div`
     position: relative;
-    /* display: grid;
-    align-content: center; */
     background-color: #ffffff;
     padding-bottom: 56.25%;
 
@@ -248,7 +242,6 @@ const Showreel = styled.div`
     justify-content: space-between;
     align-items: center;
     gap: 3rem;
-    /* overflow-x: scroll; */
     list-style: none;
 
     & > * {
@@ -268,15 +261,6 @@ const Showreel = styled.div`
         }
     }
 `;
-
-/* const GaleryContainer = styled.ul`
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
-    list-style: none;
-`; */
 
 const Title = styled.h1`
     position: absolute;
