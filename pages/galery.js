@@ -67,7 +67,7 @@ const Galery = () => {
             </Head>
             <Container>
                 <GaleryContainer>
-                    <Title>Kurt - Galerie</Title>
+                    <Title>Kurt - Galerie<br /><span>Vos créations apparaissent ici !</span></Title>
 
                     <Podium>
                         {podium.map((element, key) => {
@@ -273,6 +273,11 @@ const Title = styled.h1`
     margin: 0;
     text-align: center;
     transform: translate(-50%, -25%);
+
+    span {
+        font-family: 'Gopher', sans-serif;
+        font-size: 1.5rem;
+    }
 `;
 
 const ImgBanner = styled.div`
