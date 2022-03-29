@@ -53,9 +53,13 @@ const Credits = () => {
                         <Title>Crédits</Title>
                         <CreditsContainer>
                             <p>
-                                MMI Bordeaux
-                                <a href="https://www.mmibordeaux.com/" /> &<br /> Musée des Beaux-Arts
-                                <a href="https://www.musba-bordeaux.fr/" />
+                                <a target="_blank" rel="noreferrer" href="https://www.mmibordeaux.com/">
+                                    MMI Bordeaux
+                                </a>{" "}
+                                &<br />
+                                <a target="_blank" rel="noreferrer" href="https://www.musba-bordeaux.fr/">
+                                    Musée des Beaux-Arts
+                                </a>
                             </p>
                         </CreditsContainer>
                         <CreditsContainer>
@@ -65,12 +69,14 @@ const Credits = () => {
                         <CreditsContainer>
                             <h2>Chef de projet</h2>
                             <p>
-                                Arthur Blanc
-                                <a href="https://www.linkedin.com/in/arthur-blanc33/" />
+                                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/arthur-blanc33/">
+                                    Arthur Blanc
+                                </a>
                             </p>
                             <p>
-                                Alexandre dupin
-                                <a href="https://alexandredupin.com/" />
+                                <a target="_blank" rel="noreferrer" href="https://alexandredupin.com/">
+                                    Alexandre dupin
+                                </a>
                             </p>
                         </CreditsContainer>
                         <CreditsContainer>
@@ -78,8 +84,13 @@ const Credits = () => {
                                 Direction Artistique &<br /> Illustrations
                             </h2>
                             <p>
-                                Marie Simonek
-                                <a href="https://www.linkedin.com/in/marie-simonek-524843194/" />
+                                <a
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    href="https://www.linkedin.com/in/marie-simonek-524843194/"
+                                >
+                                    Marie Simonek
+                                </a>
                             </p>
                         </CreditsContainer>
                         <CreditsContainer>
@@ -87,23 +98,27 @@ const Credits = () => {
                                 Direction Artistique &<br /> Design d’interface
                             </h2>
                             <p>
-                                Régis Cosaque
-                                <a href="https://www.linkedin.com/in/regis-cosaque/" />
+                                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/regis-cosaque/">
+                                    Régis Cosaque
+                                </a>
                             </p>
                             <p>
-                                Sébastien Bonnemaison
-                                <a href="https://www.instagram.com/avocaraw/" />
+                                <a target="_blank" rel="noreferrer" href="https://www.instagram.com/avocaraw/">
+                                    Sébastien Bonnemaison
+                                </a>
                             </p>
                         </CreditsContainer>
                         <CreditsContainer>
                             <h2>Développement</h2>
                             <p>
-                                Maxence Breuilles
-                                <a href="https://github.com/MisterAzix" />
+                                <a target="_blank" rel="noreferrer" href="https://github.com/MisterAzix">
+                                    Maxence Breuilles
+                                </a>
                             </p>
                             <p>
-                                Clément renou
-                                <a href="https://github.com/FlanB" />
+                                <a target="_blank" rel="noreferrer" href="https://github.com/FlanB">
+                                    Clément renou
+                                </a>
                             </p>
                         </CreditsContainer>
                     </Item>
@@ -164,5 +179,14 @@ const CreditsContainer = styled.div`
         text-transform: uppercase;
         line-height: 1;
         margin: 4px;
+
+        a {
+            color: #000000;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 `;
